@@ -51,3 +51,11 @@ en:
   time:
     formats:
       short: "%d-%m-%Y"
+
+  sessions:
+    new:
+      h1: "Log in"
+      submit: "Log in"
+      new_user?: "New user? "
+      signup: "Sign up now!"
+      checkbox: "Remember me on this computer"
