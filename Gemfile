@@ -2,7 +2,11 @@ source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 gem "bcrypt"
+gem "bootstrap-kaminari-views"
+gem "carrierwave"
 gem "config"
+gem "kaminari"
+gem "mini_magick"
 gem "mysql2"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.3"
@@ -25,6 +29,11 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
+end
+
+group :production do
+  gem "fog"
+  gem "pg"
 end
 
 group :test do

@@ -1,0 +1,22 @@
+<%= form_for @movie do |f| %>
+  <%= f.label t ".name" %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label t ".release_date" %>
+  <%= f.text_field :release_date, class: "form-control" %>
+
+  <%= f.label t ".critic_score" %>
+  <%= f.text_field :critic_score, class: "form-control" %>
+
+  <%= f.label t ".audience_score" %>
+  <%= f.text_field :audience_score, class: "form-control" %>
+
+  <%= f.label t ".info" %>
+  <%= f.text_field :info, class: "form-control" %>
+
+  <span class="poster">
+    <%= f.file_field :poster, accept: Settings.movies.poster_accept %>
+  </span>
+
+  <%= f.submit t ".submit", class: "btn btn-primary" %>
+<% end %>
