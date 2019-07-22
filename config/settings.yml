@@ -1,0 +1,9 @@
+users_name_max_length: 50
+users_email_max_length: 255
+users_password_min_length: 6
+users:
+  role:
+    admin: 0
+    moderator: 1
+    critic: 2
+    normal: 3
