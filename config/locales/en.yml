@@ -14,3 +14,40 @@ en:
       one: "The form contains 1 error."
       other: "The form contains #{count} errors"
 
+  movies:
+    form:
+      name: "Name"
+      release_date: "Release Date"
+      critic_score: "Critic Score"
+      audience_score: "Audience Score"
+      info: "Information"
+      submit: "Submit"
+    index:
+      title: "Movies"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New Movie"
+    create:
+      create_success: "Movie Created"
+      create_failed: "Create Movie Failed!"
+    show:
+      title: "Show Movie"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New Movie"
+    edit:
+      title: "Editing Movie"
+    update:
+      update_success: "Movie Updated"
+      update_fail: "Update Movie Failed !"
+    destroy:
+      deleted_success: "Movie deleted"
+      delete_failed: "Delete movie failed !"
+
+  time:
+    formats:
+      short: "%d-%m-%Y"

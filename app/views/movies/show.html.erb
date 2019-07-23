@@ -1,0 +1,13 @@
+<h1><%= t ".title" %></h1>
+<tr>
+  <td><%= @movie.name %></td>
+  <td><%= I18n.l(@movie.release_date.to_time, format: :short) %></td>
+  <td><%= @movie.critic_score %></td>
+  <td><%= @movie.audience_score %></td>
+  <td><%= @movie.info %></td>
+  <td><%= image_tag @movie.poster.url if @movie.poster? %></td>
+</tr>
+<tr>
+  <td><%= link_to t(".edit"), edit_movie_path(@movie) %></td>
+  <td><%= link_to t(".destroy"), @movie, method: :delete, data: { confirm: t(".sure") } %></td>
+</tr>
