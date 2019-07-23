@@ -1,2 +1,16 @@
 en:
   project_title: "Review Movie"
+  users:
+    new:
+      h1: "Sign up"
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirmation"
+      submit: "Sign up"
+  shared:
+    error:
+      one: "The form contains 1 error."
+      other: "The form contains #{count} errors"
+
