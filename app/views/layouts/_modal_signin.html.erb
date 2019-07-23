@@ -1,0 +1,41 @@
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-login" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h2 class="modal-title w-100 font-weight-bold">
+          <%= t "sign_in.title"
+                %>
+        </h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="card-body">
+        <%= form_for :session, html: {class: "form-signin"}, url: login_path do
+                  |f| %>
+        <div class="form-label-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-control", required:
+                          true %>
+        </div>
+        <div class="form-label-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control",
+                                           required: true %>
+        </div>
+
+        <div class="custom-control custom-checkbox mb-3">
+          <%= f.check_box :remember_me, class:
+                            "custom-control-input", id: "customCheck1"  %>
+          <%= f.label :remember_me, class:
+                            "custom-control-label", for: "customCheck1" %>
+        </div>
+        <%= f.button t("sign_in.title"), type: "submit", class:
+                        "btn btn-lg btn-primary btn-block
+                        text-uppercase" %>
+        <hr class="my-4">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
