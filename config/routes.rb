@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root "static_pages#home"
   resources :movies
   resources :users, except: %i(new create)
+  resources :tv_shows
 end

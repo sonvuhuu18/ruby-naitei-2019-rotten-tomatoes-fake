@@ -1,0 +1,13 @@
+<%= form_for @tv_show do |f| %>
+  <%= f.label t ".name" %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label t ".info" %>
+  <%= f.text_field :info, class: "form-control" %>
+
+  <span class="poster">
+    <%= f.file_field :poster, accept: Settings.tvshows.poster_accept %>
+  </span>
+
+  <%= f.submit t ".submit", class: "btn btn-primary" %>
+<% end %>
