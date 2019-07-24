@@ -98,6 +98,39 @@ en:
       deleted_success: "TvShow Deleted"
       delete_failed: "Delete Tvshow Failed !"
 
+  celebrities:
+    not_found: "Celebrity not found!"
+    form:
+      name: "Name"
+      date_of_birth: "Date of Birth"
+      gender: "Gender"
+      nationality: "Nationality"
+      submit: "Submit"
+    index:
+      title: "Celebrities"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New Celebrity"
+    create:
+      create_success: "Celebrity Created"
+      create_failed: "Create Celebrity Failed!"
+    show:
+      title: "Show Celebrity"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New Celebrity"
+    edit:
+      title: "Editing Celebrity"
+    update:
+      update_success: "Celebrity Updated"
+      update_fail: "Update Celebrity Failed !"
+    destroy:
+      deleted_success: "Celebrity Deleted"
+
   time:
     formats:
       short: "%d-%m-%Y"

@@ -35,7 +35,7 @@ end
 end
 
 30.times do |n|
-  name = Faker::Movie.quote
+  name = Faker::Lorem.sentence 3
   release_date = Faker::Date.between 2.days.ago, Date.today
   critic_score = Faker::Number.decimal 1, 1
   audience_score = Faker::Number.decimal 1, 1
@@ -50,7 +50,7 @@ end
 end
 
 30.times do |n|
-  name = Faker::Movie.quote
+  name = Faker::Lorem.sentence 3
   info = Faker::Lorem.paragraph 2, false, 10
 
   TvShow.create! name: name,
@@ -63,10 +63,12 @@ tvshows.each do |tvshow|
   Faker::Number.within(1..10).times do |n|
     info = Faker::Lorem.paragraph 2, false, 10
     tv_show_id = tvshow.id
+    season_number = n
 
     Season.create! info: info,
       tv_show_id: tv_show_id,
-      poster: open("#{Rails.root}/poster.jpg")
+      poster: open("#{Rails.root}/poster.jpg"),
+      season_number: season_number
   end
 end
 
@@ -78,11 +80,26 @@ seasons.each do |season|
     audience_score = Faker::Number.decimal 1, 1
     season_id = season.id
     info = Faker::Lorem.paragraph 2, false, 10
+    episode_number = n
 
     Episode.create! release_date: release_date,
       critic_score: critic_score,
       audience_score: audience_score,
       season_id: season_id,
-      info: info
+      info: info,
+      episode_number: episode_number
   end
+end
+
+50.times do |n|
+  name = Faker::Name.name
+  date_of_birth = Faker::Date.birthday 5, 85
+  gender = Faker::Number.within(0..1)
+  nationality = Faker::Nation.nationality
+
+  Celebrity.create! name: name,
+    date_of_birth: date_of_birth,
+    gender: gender,
+    nationality: nationality,
+    portrait: open("#{Rails.root}/poster.jpg")
 end
