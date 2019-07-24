@@ -5,7 +5,7 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.datetime :release_date
       t.float :critic_score
       t.float :audience_score
-      t.string :info
+      t.text :info
 
       t.timestamps
     end
