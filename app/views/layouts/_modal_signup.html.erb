@@ -17,30 +17,30 @@
         <div class="form-label-group">
           <%= f.label t "name" %>
           <%= f.text_field :name, class: "form-control",
-                                       required: true %>
+            required: true %>
         </div>
 
         <div class="form-label-group">
           <%= f.label t "email.title" %>
           <%= f.email_field :email, class: "form-control",
-                                       required: true %>
+            required: true %>
         </div>
 
         <div class="form-label-group">
           <%= f.label t "password.title" %>
           <%= f.password_field :password, class: "form-control",
-                                           required: true %>
+            required: true %>
         </div>
 
         <div class="form-label-group">
           <%= f.label t "password.confirm" %>
           <%= f.password_field :password, class: "form-control",
-                                           required: true %>
+            required: true %>
         </div>
 
         <%= f.button t("sign_up.title"), type: "submit", class:
-                        "btn btn-lg btn-primary btn-block
-                    text-uppercase" %>
+          "btn btn-lg btn-primary btn-block
+          text-uppercase" %>
         <hr class="my-4">
         <% end %>
       </div>
