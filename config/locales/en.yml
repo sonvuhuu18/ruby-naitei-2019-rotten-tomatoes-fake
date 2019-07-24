@@ -15,6 +15,7 @@ en:
       other: "The form contains #{count} errors"
 
   movies:
+    not_found: "Movie not found!"
     form:
       name: "Name"
       release_date: "Release Date"
@@ -45,8 +46,40 @@ en:
       update_success: "Movie Updated"
       update_fail: "Update Movie Failed !"
     destroy:
-      deleted_success: "Movie deleted"
-      delete_failed: "Delete movie failed !"
+      deleted_success: "Movie Deleted"
+      delete_failed: "Delete Movie Failed !"
+
+  tv_shows:
+    not_found: "TvShow not found!"
+    form:
+      name: "Name"
+      info: "Information"
+      submit: "Submit"
+    index:
+      title: "TvShows"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New TvShow"
+    create:
+      create_success: "TvShow Created"
+      create_failed: "Create TvShow Failed!"
+    show:
+      title: "Show Tvshow"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New TvShow"
+    edit:
+      title: "Editing Tv Show"
+    update:
+      update_success: "TvShow Updated"
+      update_fail: "Update TvShow Failed !"
+    destroy:
+      deleted_success: "TvShow Deleted"
+      delete_failed: "Delete Tvshow Failed !"
 
   time:
     formats:
