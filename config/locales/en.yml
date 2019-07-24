@@ -37,6 +37,23 @@ en:
       edit: "Edit"
       destroy: "Destroy"
       sure: "Are you sure?"
+      more: "View all"
+      tab_movie:
+        title: "Movies"
+        top: "Top Movies"
+        new: "New Movies"
+      tab_tvshow:
+        title: "TVShow"
+        top: "Top TVshow"
+        new: "New TVshow"
+      right_box:
+        note1: "Critics Consensus"
+        note2: "No consensus yet."
+        audiscore: "AUDIENCE SCORE"
+        tomascore: "TOMATOMETER"
+        explain1: "The percentage of Approved Tomatometer Critics who have given this movie a positive review."
+        explain2: "The percentage of users who rated this 3.5 stars or higher."
+        comment: "What did you think of the moview ?"
     new:
       title: "New Movie"
     edit:
@@ -70,6 +87,10 @@ en:
   signup_title: "Sign Up"
   subcribe: "Subcribe"
   name: "Name: "
+  submit: "Submit"
+  photos: "Photos"
+  info: "Info"
+  cast: "Cast"
   sign_in:
     title: "Sign in"
     google: "Sign in with Google"
@@ -104,6 +125,9 @@ en:
     readable"
     name: "Out Of relation"
     rate: "3.45"
+    menu1: "menu1"
+    menu2: "menu2"
+    menu3: "menu3"
 
   section:
       title_news: "NEWS OF THE"

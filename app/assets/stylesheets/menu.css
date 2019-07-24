@@ -343,3 +343,20 @@
 .show {
   padding-right: 0 !important;
 }
+
+.fake-slider {
+  padding-top: 270px;
+  border-bottom: 4px solid #f09722;
+}
+
+.reset-margin {
+  margin: 0;
+}
+
+.reset-padding {
+  padding: 0;
+}
+
+.content-margin-top {
+  margin-top: 20px;
+}

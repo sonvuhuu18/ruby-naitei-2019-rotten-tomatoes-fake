@@ -1,9 +1,8 @@
 class MoviesController < ApplicationController
   before_action :load_movie, except: %i(index new create)
+  before_action :build_user, except: %i(create update destroy)
 
-  def index
-    @movies = Movie.create_desc.page(params[:page]).per Settings.movies.paginate
-  end
+  def index; end
 
   def new
     @movie = Movie.new
@@ -21,7 +20,10 @@ class MoviesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @movies_top_new = Movie.create_top_new
+    @movies_top_score = Movie.create_top_score
+  end
 
   def edit; end
 
@@ -56,5 +58,9 @@ class MoviesController < ApplicationController
     return if @movie
     flash[:danger] = t ".not_found"
     redirect_to movies_url
+  end
+
+  def build_user
+    @user = User.new
   end
 end
