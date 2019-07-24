@@ -1,6 +1,5 @@
 class Movie < ApplicationRecord
   has_one :medium, as: :reviewable, dependent: :destroy
-
   mount_uploader :poster, PosterUploader
 
   scope :create_desc, ->{order(release_date: :desc)}

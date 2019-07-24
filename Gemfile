@@ -2,9 +2,15 @@ source "https://rubygems.org"
 git_source(:github){|repo| "https://github.com/#{repo}.git"}
 
 gem "bcrypt"
+gem "bootsnap", ">= 1.1.0", require: false
+gem "bootstrap", "~> 4.0.0"
 gem "bootstrap-kaminari-views"
 gem "carrierwave"
+gem "coffee-rails", "~> 4.2"
 gem "config"
+gem "font-awesome-sass", "~> 4.7.0"
+gem "jbuilder", "~> 2.5"
+gem "jquery-rails"
 gem "kaminari"
 gem "mini_magick"
 gem "mysql2"
@@ -12,16 +18,12 @@ gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.3"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
-gem "uglifier", ">= 1.3.0"
-
-gem "coffee-rails", "~> 4.2"
-gem "jbuilder", "~> 2.5"
+gem "sprockets-rails"
 gem "turbolinks", "~> 5"
-
-gem "bootsnap", ">= 1.1.0", require: false
-
+gem "uglifier", ">= 1.3.0"
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "sqlite3"
 end
 
 group :development do

@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= t "project_title" %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<!doctype html>
+<html class="no-js" lang="en">
 
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
-  </head>
-
-  <body>
+<head>
+	<title><%= t "project_title" %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tag %>
+  <%= render "layouts/css" %>
+</head>
+  <body>    
+  <div class="page-wraper hmvblk default-bg home-video" id="main-home">
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/modal_signin" %>
+    <%= render "layouts/modal_signup" %>
+    <%= render "layouts/footer" %>
+  </div>
+  <%= render "layouts/js"%>
   </body>
 </html>

@@ -1,5 +1,5 @@
 en:
-  project_title: "Review Movie"
+  project_title: "Home Video - Ftage"
   users:
     new:
       h1: "Sign up"
@@ -51,3 +51,65 @@ en:
   time:
     formats:
       short: "%d-%m-%Y"
+      confirmation: "Confirmation"
+      submit: "Create my account"
+  sessions:
+    new:
+      h1: "Log in"
+      submit: "Log in"
+      new_user?: "New user? "
+      signup: "Sign up now!"
+      checkbox: "Remember me on this computer"
+
+  news_title: "News"
+  movies_title: "Movies & DVDS"
+  tvshow_title: "TVShow"
+  critics_title: "Critics"
+  login_title: "Login"
+  logout: "Logout"
+  signup_title: "Sign Up"
+  subcribe: "Subcribe"
+  name: "Name: "
+  sign_in:
+    title: "Sign in"
+    google: "Sign in with Google"
+    facebook: "Sign in with Facebook"
+
+  sign_up:
+    title: "Sign in"
+
+  password:
+    title: "Password: "
+    remember: "Remember password"
+    confirm: "Confirm Password: "
+
+  email:
+    title: "Email: "
+
+  slider:
+    title1: "title slider 1"
+    title2: "title slider 2"
+    title3: "title slider 3"
+    title4: "title slider 4"
+    title5: "title slider 5"
+
+  footer:
+    title1: "title slider 1"
+    title2: "title slider 2"
+    title3: "title slider 3"
+    title4: "title slider 4"
+
+  teamplate:
+    lorem: "It is a long established fact that a reader will be distracted
+    readable"
+    name: "Out Of relation"
+    rate: "3.45"
+
+  section:
+      title_news: "NEWS OF THE"
+      span_week: "WEEK"
+      title_moviews: "MOVIES"
+      span_moviews: "& DVDS"
+      title_tv: "TV"
+      span_tv: "SHOWS"
+
