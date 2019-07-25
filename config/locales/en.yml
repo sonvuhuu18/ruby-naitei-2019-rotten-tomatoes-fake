@@ -14,25 +14,39 @@ en:
       one: "The form contains 1 error."
       other: "The form contains #{count} errors"
 
+  admin:
+    movies:
+      not_found: "Movie not found!"
+      form:
+        name: "Name"
+        release_date: "Release Date"
+        poster: "Poster"
+        info: "Information"
+        submit: "Submit"
+      index:
+        title: "Movies"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        new: "New Movie"
+      create:
+        create_success: "Movie Created"
+        create_failed: "Create Movie Failed!"
+      new:
+        title: "New Movie"
+      edit:
+        title: "Editing Movie"
+      update:
+        update_success: "Movie Updated"
+        update_fail: "Update Movie Failed !"
+      destroy:
+        deleted_success: "Movie Deleted"
+        delete_failed: "Delete Movie Failed !"
+    not_logged_in: "Please log in"
+    not_admin: "Access denied"
+
   movies:
-    not_found: "Movie not found!"
-    form:
-      name: "Name"
-      release_date: "Release Date"
-      critic_score: "Critic Score"
-      audience_score: "Audience Score"
-      info: "Information"
-      submit: "Submit"
-    index:
-      title: "Movies"
-      show: "Show"
-      edit: "Edit"
-      destroy: "Destroy"
-      sure: "Are you sure?"
-      new: "New Movie"
-    create:
-      create_success: "Movie Created"
-      create_failed: "Create Movie Failed!"
     show:
       title: "Show Movie"
       edit: "Edit"
@@ -55,16 +69,6 @@ en:
         explain1: "The percentage of Approved Tomatometer Critics who have given this movie a positive review."
         explain2: "The percentage of users who rated this 3.5 stars or higher."
         comment: "What did you think of the moview ?"
-    new:
-      title: "New Movie"
-    edit:
-      title: "Editing Movie"
-    update:
-      update_success: "Movie Updated"
-      update_fail: "Update Movie Failed !"
-    destroy:
-      deleted_success: "Movie Deleted"
-      delete_failed: "Delete Movie Failed !"
 
   tv_shows:
     not_found: "TvShow not found!"
@@ -169,10 +173,19 @@ en:
       span_moviews: "& DVDS"
       title_tv: "TV"
       span_tv: "SHOWS"
-  admin:
-    not_logged_in: "Please log in"
-    not_admin: "Access denied"
+
   layouts:
     admin:
       title: "Admin Dashboard"
       h1: "Admin"
+
+  nameteam: "Team TSC"
+  nameweb: "Rotten Tomatoes &copy;"
+  admin_gui:
+    language1: "English"
+    language2: "Vietnamese"
+    teamplate:
+      mail: "You have 3 new mail."
+      title: "Sub: New Account"
+      note: "You have 4 new notification."
+      time: "11.00 am Today"
