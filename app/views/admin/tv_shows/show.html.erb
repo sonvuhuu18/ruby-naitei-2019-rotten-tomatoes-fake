@@ -1,6 +1,14 @@
 <%= @tv_show.name %><br>
 <%= @tv_show.info %><br>
 <%= image_tag @tv_show.poster.url if @tv_show.poster? %><br>
+<% if @tv_show.seasons.any? %>
+  <br>
+  <%= render @tv_show.seasons %>
+<% end %>
+
+<h2><%= t ".add_season" %></h2>
+<%= render "admin/seasons/form", season: @tv_show.seasons.build %>
+<br>
 
 <%= link_to t(".back"), admin_tv_shows_path %>
 <%= link_to t(".edit"), edit_admin_tv_show_path(@tv_show) %>
