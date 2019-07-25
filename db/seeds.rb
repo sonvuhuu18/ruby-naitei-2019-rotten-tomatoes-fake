@@ -10,7 +10,7 @@ User.create! name: "Moderator User",
   password_confirmation: "123456",
   role: 1
 
-25.times do |n|
+10.times do |n|
   name = Faker::Name.name
   email = "critic-#{n+1}@gmail.org"
   password = "password"
@@ -22,7 +22,7 @@ User.create! name: "Moderator User",
     role: 2
 end
 
-50.times do |n|
+20.times do |n|
   name = Faker::Name.name
   email = "normal-#{n+1}@gmail.org"
   password = "password"
@@ -34,7 +34,7 @@ end
     role: 3
 end
 
-30.times do |n|
+20.times do |n|
   name = Faker::Lorem.sentence 3
   release_date = Faker::Date.between 2.days.ago, Date.today
   critic_score = Faker::Number.decimal 1, 1
@@ -49,7 +49,7 @@ end
     poster: open("#{Rails.root}/poster.jpg")
 end
 
-30.times do |n|
+20.times do |n|
   name = Faker::Lorem.sentence 3
   info = Faker::Lorem.paragraph 2, false, 10
 
@@ -60,10 +60,10 @@ end
 
 tvshows = TvShow.all
 tvshows.each do |tvshow|
-  Faker::Number.within(1..10).times do |n|
+  Faker::Number.within(1..5).times do |n|
     info = Faker::Lorem.paragraph 2, false, 10
     tv_show_id = tvshow.id
-    season_number = n
+    season_number = n + 1
 
     Season.create! info: info,
       tv_show_id: tv_show_id,
@@ -80,7 +80,7 @@ seasons.each do |season|
     audience_score = Faker::Number.decimal 1, 1
     season_id = season.id
     info = Faker::Lorem.paragraph 2, false, 10
-    episode_number = n
+    episode_number = n + 1
 
     Episode.create! release_date: release_date,
       critic_score: critic_score,
@@ -91,7 +91,7 @@ seasons.each do |season|
   end
 end
 
-50.times do |n|
+30.times do |n|
   name = Faker::Name.name
   date_of_birth = Faker::Date.birthday 5, 85
   gender = Faker::Number.within(0..1)
@@ -102,4 +102,49 @@ end
     gender: gender,
     nationality: nationality,
     portrait: open("#{Rails.root}/poster.jpg")
+end
+
+users = User.all
+users_news = users.last(users.size - 2)
+users_news.each do |user|
+  Faker::Number.within(0..5).times do |n|
+    user_id = user.id
+    content = Faker::Lorem.paragraph 2, false, 10
+
+    News.create! user_id: user_id,
+      content: content
+  end
+end
+
+users = User.all
+users_reviewable = users.last(users.size - 2)
+medium = Medium.all
+users_reviewable.each do |user|
+  medium.each do |media|
+    Faker::Number.within(0..1).times do |n|
+      user_id = user.id
+      medium_id = media.id
+      content = Faker::Lorem.paragraph 2, false, 10
+      score = Faker::Number.decimal 1, 1
+
+      Review.create! user_id: user_id,
+        medium_id: medium_id,
+        content: content,
+        score: score
+    end
+  end
+end
+
+medium = Medium.all
+celebrities = Celebrity.all
+medium.each do |media|
+  Faker::Number.within(3..5).times do |n|
+    celebrity_id = Faker::Number.between 1, celebrities.size
+    medium_id = media.id
+    role = Faker::Number.within(0..1)
+
+    CelebrityMedium.create! celebrity_id: celebrity_id,
+      medium_id: medium_id,
+      role: role
+  end
 end

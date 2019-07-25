@@ -167,6 +167,37 @@ en:
     destroy:
       deleted_success: "Celebrity Deleted"
 
+  news:
+    not_found: "News not found!"
+    form:
+      content: "Content"
+      submit: "Submit"
+    index:
+      title: "News"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New News"
+    create:
+      create_success: "News Created"
+      create_failed: "Create News Failed!"
+    show:
+      title: "Show News"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New News"
+    edit:
+      title: "Editing News"
+    update:
+      update_success: "News Updated"
+      update_fail: "Update News Failed !"
+    destroy:
+      deleted_success: "News Deleted"
+      delete_failed: "Delete News Failed !"
+
   time:
     formats:
       short: "%d-%m-%Y"
