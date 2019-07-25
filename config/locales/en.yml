@@ -45,6 +45,38 @@ en:
         delete_failed: "Delete Movie Failed !"
     not_logged_in: "Please log in"
     not_admin: "Access denied"
+    tv_shows:
+      not_found: "TvShow not found!"
+      form:
+        name: "Name"
+        info: "Information"
+        submit: "Submit"
+        poster: "Poster"
+      index:
+        title: "TvShows"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        new: "New TvShow"
+      create:
+        create_success: "TvShow Created"
+        create_failed: "Create TvShow Failed!"
+      show:
+        title: "Show Tvshow"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+      new:
+        title: "New TvShow"
+      edit:
+        title: "Editing Tv Show"
+      update:
+        update_success: "TvShow Updated"
+        update_fail: "Update TvShow Failed !"
+      destroy:
+        deleted_success: "TvShow Deleted"
+        delete_failed: "Delete Tvshow Failed !"
 
   movies:
     show:
@@ -211,6 +243,8 @@ en:
     admin:
       title: "Admin Dashboard"
       h1: "Admin"
+      left_side:
+        tv_show: "TV Shows"
   nameteam: "Team TSC"
   nameweb: "Rotten Tomatoes &copy;"
   admin_gui:

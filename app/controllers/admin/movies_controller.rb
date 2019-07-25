@@ -2,7 +2,7 @@ class Admin::MoviesController < Admin::BaseController
   before_action :load_movie, except: %i(index new create)
 
   def index
-    @movies = Movie.all.page(params[:page]).per Settings.movies.paginate
+    @movies = Movie.create_top_new.page(params[:page]).per Settings.paginate
   end
 
   def new
