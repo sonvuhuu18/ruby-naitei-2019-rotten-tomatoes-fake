@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
   resources :movies, only: %i(index show)
   resources :tv_shows, only: %i(index show)
+  resources :celebrities, only: %i(index show)
   namespace :admin do
     resources :movies
     resources :users, except: %i(new create)
@@ -16,9 +17,9 @@ Rails.application.routes.draw do
         resources :episodes, except: :index
       end
     end
+    resources :celebrities
+    resources :celebrity_media, only: %i(create destroy)
     root "dashboard#index"
   end
-  resources :users, except: %i(new create)
-  resources :celebrities
   resources :news
 end

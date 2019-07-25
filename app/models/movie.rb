@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  after_create :create_medium
+
   has_one :medium, as: :reviewable, dependent: :destroy
   mount_uploader :poster, PosterUploader
 
