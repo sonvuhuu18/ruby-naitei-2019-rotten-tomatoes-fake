@@ -8,4 +8,12 @@ class Season < ApplicationRecord
 
   validates :info, presence: true,
     length: {maximum: Settings.seasons.info_max_length}
+  validate :unique_season_number
+
+  private
+
+  def unique_season_number
+    return unless tv_show.seasons.where(season_number: season_number).exists?
+    errors.add :season_number, I18n.t("admin.seasons.duplicate")
+  end
 end

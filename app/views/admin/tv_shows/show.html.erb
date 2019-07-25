@@ -1,6 +1,7 @@
 <%= @tv_show.name %><br>
 <%= @tv_show.info %><br>
 <%= image_tag @tv_show.poster.url if @tv_show.poster? %><br>
+
 <% if @tv_show.seasons.any? %>
   <br>
   <%= render @tv_show.seasons %>
