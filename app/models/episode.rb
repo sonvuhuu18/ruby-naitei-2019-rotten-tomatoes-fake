@@ -1,9 +1,12 @@
 class Episode < ApplicationRecord
+  after_create :create_medium
+
   belongs_to :season
   has_one :medium, as: :reviewable, dependent: :destroy
 
   ATTR = %i(info release_date episode_number).freeze
 
+  validates :episode_number, presence: true
   validates :info, presence: true,
     length: {maximum: Settings.episodes.info_max_length}
   validate :unique_episode_number
