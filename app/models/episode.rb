@@ -1,4 +1,6 @@
 class Episode < ApplicationRecord
+  after_create :create_medium
+
   belongs_to :season
   has_one :medium, as: :reviewable, dependent: :destroy
 
@@ -13,5 +15,9 @@ class Episode < ApplicationRecord
   def unique_episode_number
     return unless season.episodes.where(episode_number: episode_number).exists?
     errors.add :episode_number, I18n.t(".duplicate")
+  end
+
+  def create_medium
+    Medium.create_instance self
   end
 end
