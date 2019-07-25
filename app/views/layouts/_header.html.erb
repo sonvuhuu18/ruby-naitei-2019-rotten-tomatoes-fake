@@ -39,50 +39,5 @@
       </div>
     </div>
   </div>
-  <div class="slider-area">
-    <div class="slider-active owl-carousel owl-theme">
-      <div class="slider-item fullscreen single-banner">
-        <div class="youtube-video-wrapper" data-black-overlay="6">
-          <div class="youtube-bg" data-property="{videoURL:'https://www.youtube.com/watch?v=xpgzmcMUv2U',containment:'self',showControls:false,startAt:0,mute:true,autoPlay:true,loop:true,opacity:1,showYTLogo:false,optimizeDisplay:true}"></div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="slide-content text-center col-lg-12 col-md-12 col-sm-12">
-              <h1>
-                <%= t "slider.title1"%>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slider-item fullscreen single-banner">
-        <div class="youtube-video-wrapper" data-black-overlay="6">
-          <div class="youtube-bg" data-property="{videoURL:'https://www.youtube.com/watch?v=JreOIO7JMiU',containment:'self',showControls:false,startAt:0,mute:true,autoPlay:true,loop:true,opacity:1,showYTLogo:false,optimizeDisplay:true}"></div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="slide-content text-center col-lg-12 col-md-12 col-sm-12">
-              <h1>
-                <%= t "slider.title2"%>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slider-item fullscreen single-banner">
-        <div class="youtube-video-wrapper" data-black-overlay="6">
-          <div class="youtube-bg" data-property="{videoURL:'https://www.youtube.com/watch?v=aAguZDFjKi8',containment:'self',showControls:false,startAt:0,mute:true,autoPlay:true,loop:true,opacity:1,showYTLogo:false,optimizeDisplay:true}"></div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="slide-content text-center col-lg-12 col-md-12 col-sm-12">
-              <h1>
-                <%= t "slider.title3"%>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= yield :slider %>
 </header>
