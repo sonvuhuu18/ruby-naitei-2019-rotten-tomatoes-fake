@@ -158,6 +158,19 @@ en:
         update_fail: "Update Celebrity Failed !"
       destroy:
         delete_success: "Celebrity Deleted"
+    celebrity_media:
+      not_found: "Celebrity not found!"
+      form:
+        celebrity: "Celebrity"
+        role: "Role"
+      create:
+        create_success: "Celebrity Created"
+        create_failed: "Create Celebrity Failed!"
+      destroy:
+        delete_success: "Celebrity Deleted"
+      celebrity_medium:
+        destroy: "Delete"
+        sure: "Are you sure?"
 
   movies:
     show:

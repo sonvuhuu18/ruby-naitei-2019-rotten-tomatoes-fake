@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_26_013627) do
+ActiveRecord::Schema.define(version: 2019_08_05_044434) do
 
   create_table "celebrities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_26_013627) do
     t.bigint "medium_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["celebrity_id", "medium_id", "role"], name: "index_celebrity_media_on_celebrity_id_and_medium_id_and_role"
     t.index ["celebrity_id"], name: "index_celebrity_media_on_celebrity_id"
     t.index ["medium_id"], name: "index_celebrity_media_on_medium_id"
   end
