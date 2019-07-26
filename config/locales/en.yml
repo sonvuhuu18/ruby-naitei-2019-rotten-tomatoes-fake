@@ -169,4 +169,10 @@ en:
       span_moviews: "& DVDS"
       title_tv: "TV"
       span_tv: "SHOWS"
-
+  admin:
+    not_logged_in: "Please log in"
+    not_admin: "Access denied"
+  layouts:
+    admin:
+      title: "Admin Dashboard"
+      h1: "Admin"

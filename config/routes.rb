@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
   root "static_pages#home"
-  resources :movies
-  resources :users, except: %i(new create)
-  resources :tv_shows
+  namespace :admin do
+    resources :movies
+    resources :users, except: %i(new create)
+    resources :tv_shows
+    root "dashboard#index"
+  end
 end

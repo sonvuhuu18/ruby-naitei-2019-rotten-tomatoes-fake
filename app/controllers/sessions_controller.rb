@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(session[:password])
       log_in user
       session[:remember_me] == "1" ? remember(user) : forget(user)
-      redirect_to root_path
+      user.admin? ? redirect_to(admin_root_path) : redirect_to(root_path)
     else
       render :new
     end
