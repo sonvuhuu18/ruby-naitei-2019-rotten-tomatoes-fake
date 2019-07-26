@@ -1,10 +1,11 @@
-<%= form_for @tv_show do |f| %>
+<%= form_for [:admin, @tv_show] do |f| %>
   <%= f.label t ".name" %>
   <%= f.text_field :name, class: "form-control" %>
 
   <%= f.label t ".info" %>
   <%= f.text_field :info, class: "form-control" %>
 
+  <%= f.label t ".poster" %>
   <span class="poster">
     <%= f.file_field :poster, accept: Settings.tvshows.poster_accept %>
   </span>

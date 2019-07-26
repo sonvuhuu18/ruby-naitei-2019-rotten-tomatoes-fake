@@ -45,6 +45,38 @@ en:
         delete_failed: "Delete Movie Failed !"
     not_logged_in: "Please log in"
     not_admin: "Access denied"
+    tv_shows:
+      not_found: "TvShow not found!"
+      form:
+        name: "Name"
+        info: "Information"
+        submit: "Submit"
+        poster: "Poster"
+      index:
+        title: "TvShows"
+        show: "Show"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        new: "New TvShow"
+      create:
+        create_success: "TvShow Created"
+        create_failed: "Create TvShow Failed!"
+      show:
+        title: "Show Tvshow"
+        edit: "Edit"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+      new:
+        title: "New TvShow"
+      edit:
+        title: "Editing Tv Show"
+      update:
+        update_success: "TvShow Updated"
+        update_fail: "Update TvShow Failed !"
+      destroy:
+        deleted_success: "TvShow Deleted"
+        delete_failed: "Delete Tvshow Failed !"
 
   movies:
     show:
@@ -69,38 +101,6 @@ en:
         explain1: "The percentage of Approved Tomatometer Critics who have given this movie a positive review."
         explain2: "The percentage of users who rated this 3.5 stars or higher."
         comment: "What did you think of the moview ?"
-
-  tv_shows:
-    not_found: "TvShow not found!"
-    form:
-      name: "Name"
-      info: "Information"
-      submit: "Submit"
-    index:
-      title: "TvShows"
-      show: "Show"
-      edit: "Edit"
-      destroy: "Destroy"
-      sure: "Are you sure?"
-      new: "New TvShow"
-    create:
-      create_success: "TvShow Created"
-      create_failed: "Create TvShow Failed!"
-    show:
-      title: "Show Tvshow"
-      edit: "Edit"
-      destroy: "Destroy"
-      sure: "Are you sure?"
-    new:
-      title: "New TvShow"
-    edit:
-      title: "Editing Tv Show"
-    update:
-      update_success: "TvShow Updated"
-      update_fail: "Update TvShow Failed !"
-    destroy:
-      deleted_success: "TvShow Deleted"
-      delete_failed: "Delete Tvshow Failed !"
 
   time:
     formats:
