@@ -30,6 +30,10 @@ en:
         destroy: "Destroy"
         sure: "Are you sure?"
         new: "New Movie"
+        id: "ID"
+        name: "Movie Name"
+        image: "Image"
+        action: "Action"
       create:
         create_success: "Movie Created"
         create_failed: "Create Movie Failed!"
