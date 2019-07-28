@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_040415) do
+ActiveRecord::Schema.define(version: 2019_07_26_013627) do
 
   create_table "celebrities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_040415) do
     t.string "nationality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "portrait"
   end
 
   create_table "celebrity_media", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -35,10 +36,11 @@ ActiveRecord::Schema.define(version: 2019_07_25_040415) do
     t.datetime "release_date"
     t.float "critic_score"
     t.float "audience_score"
-    t.string "info"
+    t.text "info"
     t.bigint "season_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "episode_number"
     t.index ["season_id"], name: "index_episodes_on_season_id"
   end
 
@@ -54,14 +56,14 @@ ActiveRecord::Schema.define(version: 2019_07_25_040415) do
     t.datetime "release_date"
     t.float "critic_score"
     t.float "audience_score"
-    t.string "info"
+    t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "poster"
   end
 
   create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -69,7 +71,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_040415) do
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.integer "score"
     t.bigint "user_id"
     t.bigint "medium_id"
@@ -80,17 +82,18 @@ ActiveRecord::Schema.define(version: 2019_07_25_040415) do
   end
 
   create_table "seasons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "info"
+    t.text "info"
     t.bigint "tv_show_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "poster"
+    t.integer "season_number"
     t.index ["tv_show_id"], name: "index_seasons_on_tv_show_id"
   end
 
   create_table "tv_shows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "info"
+    t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "poster"

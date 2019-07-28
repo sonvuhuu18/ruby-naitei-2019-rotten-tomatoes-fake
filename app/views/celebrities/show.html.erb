@@ -1,0 +1,12 @@
+<h1><%= t ".title" %></h1>
+<tr>
+  <td><%= @celebrity.name %></td>
+  <td><%= I18n.l(@celebrity.date_of_birth.to_time, format: :short) %></td>
+  <td><%= @celebrity.gender %></td>
+  <td><%= @celebrity.nationality %></td>
+  <td><%= image_tag @celebrity.portrait.url if @celebrity.portrait? %></td>
+</tr>
+<tr>
+  <td><%= link_to t(".edit"), edit_celebrity_path(@celebrity) %></td>
+  <td><%= link_to t(".destroy"), @celebrity, method: :delete, data: {confirm: t(".sure")} %></td>
+</tr>

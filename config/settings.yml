@@ -33,3 +33,9 @@ seasons:
 
 episodes:
   info_max_length: 1000
+
+celebrities:
+  name_max_length: 100
+  index_portrait_heigth: 400
+  index_portrait_width: 200
+  portrait_accept: "image/jpeg,image/gif,image/png"

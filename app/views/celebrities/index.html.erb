@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t ".title" %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @celebrities.each do |celebrity| %>
+      <tr>
+        <td><%= celebrity.name %></td>
+        <td><%= image_tag celebrity.portrait.url if celebrity.portrait? %> </td>
+        <td><%= link_to t(".show"), celebrity %></td>
+        <td><%= link_to t(".edit"), edit_celebrity_path(celebrity) %></td>
+        <td><%= link_to t(".destroy"), celebrity, method: :delete, data: {confirm: t(".sure")} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t(".new"), new_celebrity_path %>
