@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   root "static_pages#home"
   resources :movies, only: %i(index show)
+  resources :tv_shows, only: %i(index show)
   namespace :admin do
     resources :movies
     resources :users, except: %i(new create)

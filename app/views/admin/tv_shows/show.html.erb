@@ -1,0 +1,7 @@
+<%= @tv_show.name %><br>
+<%= @tv_show.info %><br>
+<%= image_tag @tv_show.poster.url if @tv_show.poster? %><br>
+
+<%= link_to t(".back"), admin_tv_shows_path %>
+<%= link_to t(".edit"), edit_admin_tv_show_path(@tv_show) %>
+<%= link_to t(".destroy"), [:admin, @tv_show], method: :delete, data: {confirm: t(".sure")} %>
