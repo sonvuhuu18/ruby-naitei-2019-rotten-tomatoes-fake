@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
   root "static_pages#home"
+  resources :movies, only: %i(index show)
   namespace :admin do
     resources :movies
     resources :users, except: %i(new create)
