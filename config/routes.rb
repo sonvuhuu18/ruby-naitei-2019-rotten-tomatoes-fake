@@ -14,8 +14,6 @@ Rails.application.routes.draw do
     resources :tv_shows
     root "dashboard#index"
   end
-  resources :movies
   resources :users, except: %i(new create)
-  resources :tv_shows
   resources :celebrities
 end

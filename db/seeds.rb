@@ -5,9 +5,9 @@ User.create! name: "Admin User",
   role: 0
 
 User.create! name: "Moderator User",
-  email: "moderator@gmail.com",
-  password: "123123",
-  password_confirmation: "123123",
+  email: "user@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
   role: 1
 
 25.times do |n|
