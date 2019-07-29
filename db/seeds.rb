@@ -37,14 +37,14 @@ end
 20.times do |n|
   name = Faker::Lorem.sentence 3
   release_date = Faker::Date.between 2.days.ago, Date.today
-  critic_score = Faker::Number.decimal 1, 1
-  audience_score = Faker::Number.decimal 1, 1
+  # critic_score = Faker::Number.decimal 1, 1
+  # audience_score = Faker::Number.decimal 1, 1
   info = Faker::Lorem.paragraph 2, false, 10
 
   Movie.create! name: name,
     release_date: release_date,
-    critic_score: critic_score,
-    audience_score: audience_score,
+    # critic_score: critic_score,
+    # audience_score: audience_score,
     info: info,
     poster: open("#{Rails.root}/poster.jpg")
 end
@@ -76,15 +76,15 @@ seasons = Season.all
 seasons.each do |season|
   Faker::Number.within(5..25).times do |n|
     release_date = Faker::Date.between 100.days.ago, Date.today
-    critic_score = Faker::Number.decimal 1, 1
-    audience_score = Faker::Number.decimal 1, 1
+    # critic_score = Faker::Number.decimal 1, 1
+    # audience_score = Faker::Number.decimal 1, 1
     season_id = season.id
     info = Faker::Lorem.paragraph 2, false, 10
     episode_number = n + 1
 
     Episode.create! release_date: release_date,
-      critic_score: critic_score,
-      audience_score: audience_score,
+      # critic_score: critic_score,
+      # audience_score: audience_score,
       season_id: season_id,
       info: info,
       episode_number: episode_number
@@ -114,6 +114,16 @@ users_news.each do |user|
     News.create! user_id: user_id,
       content: content
   end
+end
+
+movies = Movie.all
+movies.each do |movie|
+  Medium.create! reviewable: movie
+end
+
+episodes = Episode.all
+episodes.each do |episode|
+  Medium.create! reviewable: episode
 end
 
 users = User.all

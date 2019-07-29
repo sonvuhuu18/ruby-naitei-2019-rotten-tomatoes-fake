@@ -274,6 +274,24 @@ en:
       create_failed: "Create News Failed!"
     show:
       title: "Show News"
+
+  reviews:
+    not_found: "Review not found!"
+    form:
+      content: "Content"
+      score: "Score"
+      submit: "Submit"
+    index:
+      title: "Reviews"
+      show: "Show"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New Review"
+    create:
+      create_success: "Review Created"
+      create_failed: "Create Review Failed!"
+    show:
+      title: "Show Review"
       edit: "Edit"
       destroy: "Destroy"
       sure: "Are you sure?"
@@ -287,6 +305,13 @@ en:
     destroy:
       deleted_success: "News Deleted"
       delete_failed: "Delete News Failed !"
+<<<<<<< HEAD
+=======
+      title: "New Review"
+    destroy:
+      deleted_success: "Review Deleted"
+
+>>>>>>> Review + Score Calculate
   time:
     formats:
       short: "%d-%m-%Y"
