@@ -62,6 +62,9 @@ GEM
     bootstrap-kaminari-views (0.0.5)
       kaminari (>= 0.13)
       rails (>= 3.1)
+    bootstrap4-kaminari-views (1.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.27.0)
@@ -511,6 +514,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.0.0)
   bootstrap-kaminari-views
+  bootstrap4-kaminari-views
   byebug
   capybara (>= 2.15)
   carrierwave

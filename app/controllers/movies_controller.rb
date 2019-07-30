@@ -1,8 +1,14 @@
 class MoviesController < ApplicationController
-  before_action :load_movie, :build_user, only: :show
-
+  before_action :load_movie, only: :show
+  before_action :build_user, only: %i(index show)
   def index
-    @movies = Movie.create_desc.page(params[:page]).per Settings.movies.paginate
+    @movies = Movie.create_desc.page(params[:page]).per Settings.paginate_movie
+
+    @top_new_show = Movie.create_top_new.top_new_show
+    @top_new_more = @top_new_show.top_new_more
+
+    @top_score_show = Movie.create_top_score.top_score_show
+    @top_score_more = @top_score_show.top_score_more
   end
 
   def show
