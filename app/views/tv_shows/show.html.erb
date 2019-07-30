@@ -68,7 +68,7 @@
           <div class="row">
             <% @tv_show.seasons.each do |season| %>
               <div class="col-4">
-                <div class="card movie_line">
+                <div class="card seasons_line">
                   <%= image_tag season.poster.url, class: "card-img-top" if season.poster? %>
                   <div class="card-body">
                     <h4 class="card-title">

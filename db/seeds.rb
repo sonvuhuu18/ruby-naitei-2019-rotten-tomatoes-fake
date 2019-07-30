@@ -116,16 +116,6 @@ users_news.each do |user|
   end
 end
 
-movies = Movie.all
-movies.each do |movie|
-  Medium.create! reviewable: movie
-end
-
-episodes = Episode.all
-episodes.each do |episode|
-  Medium.create! reviewable: episode
-end
-
 users = User.all
 users_reviewable = users.last(users.size - 2)
 medium = Medium.all
@@ -148,8 +138,8 @@ end
 medium = Medium.all
 celebrities = Celebrity.all
 medium.each do |media|
-  Faker::Number.within(3..5).times do |n|
-    celebrity_id = Faker::Number.between 1, celebrities.size
+  Faker::Number.within(1..1).times do |n|
+    celebrity_id = 1
     medium_id = media.id
     role = Faker::Number.within(0..1)
 
