@@ -38,3 +38,7 @@ celebrities:
   index_portrait_heigth: 400
   index_portrait_width: 200
   portrait_accept: "image/jpeg,image/gif,image/png"
+
+news:
+  content_max_length: 1000
+  paginate: 10

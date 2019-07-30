@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
   resources :users, except: %i(new create)
   resources :celebrities
+  resources :news
 end
