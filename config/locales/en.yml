@@ -103,6 +103,29 @@ en:
       show:
         edit: "Edit"
         back: "Back"
+      duplicate: "Duplicated season number!"
+    episodes:
+      create:
+        create_success: "Episode Created"
+        create_failed: "Create Episode Failed!"
+      update:
+        update_success: "Episode Updated"
+        update_failed: "Update Episode Failed!"
+      destroy:
+        delete_success: "Episode Deleted"
+      form:
+        episode_number: "Episode number"
+        info: "Info"
+        release_date: "Release date"
+      episode:
+        edit: "Edit this Episode: "
+        delete: "Delete Episode"
+      edit:
+        edit: "Editing Episode "
+      show:
+        edit: "Edit"
+        back: "Back"
+      duplicate: "Duplicated Episode number!"
 
   movies:
     show:

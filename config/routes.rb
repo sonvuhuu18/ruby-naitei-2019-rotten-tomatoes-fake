@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     resources :movies
     resources :users, except: %i(new create)
     resources :tv_shows do
-      resources :seasons, except: :index
+      resources :seasons, except: :index do
+        resources :episodes, except: :index
+      end
     end
     root "dashboard#index"
   end
