@@ -82,11 +82,7 @@ en:
       destroy:
         deleted_success: "TvShow Deleted"
         delete_failed: "Delete Tvshow Failed !"
-<<<<<<< HEAD
-      show:
-        add_season: "Add a season: "
-=======
->>>>>>> 60816f693b687544a0c3c7f0418f2109b0e4c758
+
     seasons:
       create:
         create_success: "Season Created"
@@ -101,11 +97,7 @@ en:
         info: "Info"
       season:
         edit: "Edit this season: "
-<<<<<<< HEAD
-        delete: "Delete season"
-=======
         delete: "Delete this season"
->>>>>>> 60816f693b687544a0c3c7f0418f2109b0e4c758
       edit:
         edit: "Editing season "
       show:
@@ -124,10 +116,7 @@ en:
       form:
         episode_number: "Episode number"
         info: "Info"
-<<<<<<< HEAD
         release_date: "Release date"
-=======
->>>>>>> 60816f693b687544a0c3c7f0418f2109b0e4c758
       episode:
         edit: "Edit this Episode: "
         delete: "Delete Episode"
@@ -169,7 +158,6 @@ en:
         update_fail: "Update Celebrity Failed !"
       destroy:
         delete_success: "Celebrity Deleted"
-<<<<<<< HEAD
     celebrity_media:
       not_found: "Celebrity not found!"
       form:
@@ -184,8 +172,6 @@ en:
         destroy: "Delete"
         sure: "Are you sure?"
 
-=======
->>>>>>> 60816f693b687544a0c3c7f0418f2109b0e4c758
   movies:
     show:
       title: "Show Movie"
@@ -242,7 +228,6 @@ en:
       deleted_success: "TvShow Deleted"
       delete_failed: "Delete Tvshow Failed !"
 
-<<<<<<< HEAD
   celebrities:
     not_found: "Celebrity not found!"
     form:
@@ -322,17 +307,10 @@ en:
       update_success: "News Updated"
       update_fail: "Update News Failed !"
     destroy:
-      deleted_success: "News Deleted"
       delete_failed: "Delete News Failed !"
-<<<<<<< HEAD
-=======
       title: "New Review"
-    destroy:
       deleted_success: "Review Deleted"
 
->>>>>>> Review + Score Calculate
-=======
->>>>>>> 60816f693b687544a0c3c7f0418f2109b0e4c758
   time:
     formats:
       short: "%d-%m-%Y"

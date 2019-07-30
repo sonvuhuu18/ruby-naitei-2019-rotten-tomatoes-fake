@@ -9,13 +9,9 @@
         <td><%= tv_show.name %></td>
         <td><%= image_tag tv_show.poster.url if tv_show.poster? %> </td>
         <td><%= link_to t(".show"), tv_show %></td>
-        <td><%= link_to t(".edit"), edit_tv_show_path(tv_show) %></td>
-        <td><%= link_to t(".destroy"), tv_show, method: :delete, data: {confirm: t(".sure")} %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to t(".new"), new_tv_show_path %>
