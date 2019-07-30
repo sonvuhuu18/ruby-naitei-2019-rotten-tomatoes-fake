@@ -11,6 +11,8 @@ class MoviesController < ApplicationController
 
     @top_score_show = Movie.create_top_score.top_score_show
     @top_score_more = @top_score_show.top_score_more
+
+    @review = Review.new
   end
 
   private

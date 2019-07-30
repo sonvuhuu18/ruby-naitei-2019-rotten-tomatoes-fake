@@ -15,11 +15,10 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:success] = t ".create_success"
-      redirect_to @review
     else
       flash[:danger] = t ".create_failed"
-      render :new
     end
+    redirect_back(fallback_location: root_path)
   end
 
   def show; end
@@ -40,7 +39,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:news).permit Review::ATTR
+    params.require(:review).permit Review::ATTR
   end
 
   def load_review

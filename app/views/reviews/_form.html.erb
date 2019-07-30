@@ -3,7 +3,12 @@
   <%= f.text_field :content, class: "form-control" %>
 
   <%= f.label t ".score" %>
-  <%= f.text_field :score, class: "form-control" %>
+  <%= f.select :score, (1..10), class: "form-control" %>
 
-  <%= f.submit t ".submit", class: "btn btn-primary" %>
+  <%= f.hidden_field :medium_id, {value: medium_id} %>
+  <%= f.hidden_field :user_id, {value: user_id} %>
+
+  <div class="text-right">
+    <%= f.button "Submit", type: "submit", class: "btn btn-warning btn-sm" %>
+  </div>
 <% end %>
