@@ -3,8 +3,7 @@ class TvShowsController < ApplicationController
   before_action :build_user, only: %i(index show)
 
   def index
-    @tv_shows = TvShow.create_desc.page(params[:page]).per Settings.tvshows
-                                                                   .paginate
+    @tv_shows = TvShow.create_desc.page(params[:page]).per Settings.tvshows.paginate
   end
 
   def show

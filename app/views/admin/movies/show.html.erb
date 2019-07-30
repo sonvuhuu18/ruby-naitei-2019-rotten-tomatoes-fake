@@ -1,13 +1,9 @@
-<%= @movie.name %><br>
-<%= @movie.info %><br>
-
-<% if @movie.medium.celebrity_media.any? %>
-  <br>
-  <%= render @movie.medium.celebrity_media %>
-<% end %>
-
-<h2><%= t ".add_celebrity" %></h2>
-<%= render "admin/celebrity_media/form", celebrity_medium: @movie.medium.celebrity_media.build, medium_id: @movie.medium.id %>
+<h3 class="text-center text-warning"><%= @movie.name %></h3><br>
+<div class="box">
+  <div class="box-body">
+    <p class="text-white"><%= @movie.info %></p>
+  </div>
+</div>
 <br>
-
-<%= link_to t(".back"), admin_movies_path %>
+<br>
+<span class="badge-success badge"><%= link_to t(".back"), admin_movies_path %></span>

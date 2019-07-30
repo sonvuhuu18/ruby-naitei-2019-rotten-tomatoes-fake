@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :movies, only: %i(index show)
   resources :tv_shows, only: %i(index show)
   resources :celebrities, only: %i(index show)
+  resources :news
+  resources :reviews, except: %i(edit update)
+
   namespace :admin do
     resources :movies
     resources :users, except: %i(new create)
@@ -21,6 +24,4 @@ Rails.application.routes.draw do
     resources :celebrity_media, only: %i(create destroy)
     root "dashboard#index"
   end
-  resources :news
-  resources :reviews, except: %i(edit update)
 end
