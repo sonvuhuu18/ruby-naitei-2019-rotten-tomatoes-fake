@@ -19,6 +19,16 @@ class Movie < ApplicationRecord
   validates :info, presence: true,
     length: {maximum: Settings.movies.info_max_length}
 
+  def critic_score
+    self.medium.reviews
+      .joins(:user).where(users: {role: :critic}).average(:score) || "N/A"
+  end
+
+  def audience_score
+    self.medium.reviews
+      .joins(:user).where.not(users: {role: :critic}).average(:score) || "N/A"
+  end
+
   private
 
   def create_medium
