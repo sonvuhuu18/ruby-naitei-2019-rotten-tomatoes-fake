@@ -63,7 +63,7 @@ tvshows.each do |tvshow|
   Faker::Number.within(1..10).times do |n|
     info = Faker::Lorem.paragraph 2, false, 10
     tv_show_id = tvshow.id
-    season_number = n
+    season_number = n+1
 
     Season.create! info: info,
       tv_show_id: tv_show_id,
@@ -80,7 +80,7 @@ seasons.each do |season|
     audience_score = Faker::Number.decimal 1, 1
     season_id = season.id
     info = Faker::Lorem.paragraph 2, false, 10
-    episode_number = n
+    episode_number = n+1
 
     Episode.create! release_date: release_date,
       critic_score: critic_score,

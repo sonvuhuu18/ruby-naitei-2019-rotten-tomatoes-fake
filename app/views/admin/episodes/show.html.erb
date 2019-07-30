@@ -1,0 +1,6 @@
+<%= @episode.episode_number %><br>
+<%= @episode.info %><br>
+<%= @episode.release_date %><br>
+
+<%= link_to t(".edit"), edit_admin_tv_show_season_episode_path(@episode) %><br>
+<%= link_to t(".back"), admin_tv_show_season_path(@tv_show, @season) %>

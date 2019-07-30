@@ -1,0 +1,11 @@
+<h3><%= t ".edit" %><%= season.season_number %> </h3>
+<span class="badge badge-warning">
+  <%= link_to t(".delete"), admin_tv_show_season_path(@tv_show,season), method: :delete %>
+</span>
+<br><br>
+<div class="box">
+  <div class="box-body">
+    <%= render "admin/seasons/form", season: season %>
+  </div>
+</div>
+<br>

@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<h1><%= t ".title" %></h1><span class="badge badge-warning"><%= link_to t(".new"), new_admin_movie_path %></span>
+<h1><%= t ".title" %></h1><span class="badge badge-warning"><%= link_to t(".new"), new_admin_celebrity_path %></span>
 <br>
 <br>
 <div class="col-12 mb-30">
@@ -17,17 +17,17 @@
           </tr>
           </thead><!-- Table Head End -->
           <tbody>
-          <% @movies.each do |movie| %>
+          <% @celebrities.each do |celebrity| %>
             <tr>
-              <td>#<%= movie.id %></td>
+              <td>#<%= celebrity.id %></td>
               <td>
-                <%= image_tag movie.poster.url, class: "table-product-image" if movie.poster? %>
+                <%= image_tag celebrity.portrait.url, class: "table-product-image" if celebrity.portrait? %>
               </td>
-              <td><h4><%= movie.name %></h4></td>
+              <td><h4><%= celebrity.name %></h4></td>
               <td>
-                <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, [:admin, movie] %>
-                <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_admin_movie_path(movie) %>
-                <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, [:admin, movie], method: :delete,
+                <%= link_to '<i class="fa fa-eye" aria-hidden="true"></i>'.html_safe, [:admin, celebrity] %>
+                <%= link_to '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_admin_celebrity_path(celebrity) %>
+                <%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, [:admin, celebrity], method: :delete,
                             data: {confirm: t(".sure")} %>
               </td>
             </tr>
@@ -38,4 +38,4 @@
     </div>
   </div>
 </div>
-<%= paginate @movies, theme: "twitter-bootstrap-3",pagination_class: "pagination-sm" %>
+<%= paginate @celebrities, theme: "twitter-bootstrap-3",pagination_class: "pagination-sm" %>

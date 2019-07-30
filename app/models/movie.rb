@@ -1,4 +1,6 @@
 class Movie < ApplicationRecord
+  after_create :create_medium
+
   has_one :medium, as: :reviewable, dependent: :destroy
   mount_uploader :poster, PosterUploader
 
@@ -16,4 +18,10 @@ class Movie < ApplicationRecord
     length: {maximum: Settings.movies.name_max_length}
   validates :info, presence: true,
     length: {maximum: Settings.movies.info_max_length}
+
+  private
+
+  def create_medium
+    Medium.create_instance self
+  end
 end

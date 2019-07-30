@@ -11,9 +11,13 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :movies
     resources :users, except: %i(new create)
-    resources :tv_shows
+    resources :tv_shows do
+      resources :seasons, except: :index do
+        resources :episodes, except: :index
+      end
+    end
+    resources :celebrities
     root "dashboard#index"
   end
-  resources :users, except: %i(new create)
   resources :celebrities
 end
