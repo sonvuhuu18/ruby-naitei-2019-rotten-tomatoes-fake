@@ -1,0 +1,13 @@
+<%= form_for [:admin, @tv_show, season] do |f| %>
+  <p>
+    <%= f.label t ".season_number" %>
+    <%= f.number_field :season_number %>
+  </p>
+  <p>
+    <%= f.label t ".info" %>
+    <%= f.text_field :info %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

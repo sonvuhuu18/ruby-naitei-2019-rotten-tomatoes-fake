@@ -77,6 +77,28 @@ en:
       destroy:
         deleted_success: "TvShow Deleted"
         delete_failed: "Delete Tvshow Failed !"
+      show:
+        add_season: "Add a season: "
+    seasons:
+      create:
+        create_success: "Season Created"
+        create_failed: "Create Season Failed!"
+      update:
+        update_success: "Season Updated"
+        update_failed: "Update Season Failed!"
+      destroy:
+        delete_success: "Season Deleted"
+      form:
+        season_number: "Season number"
+        info: "Info"
+      season:
+        edit: "Edit this season: "
+        delete: "Delete season"
+      edit:
+        edit: "Editing season "
+      show:
+        edit: "Edit"
+        back: "Back"
 
   movies:
     show:

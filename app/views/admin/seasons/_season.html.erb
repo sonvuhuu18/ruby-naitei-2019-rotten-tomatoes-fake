@@ -1,0 +1,8 @@
+<%= link_to season.season_number, admin_tv_show_season_path(@tv_show, season) %>
+
+<p><%= t ".edit" %></p>
+<%= render "admin/seasons/form", season: season %>
+
+<p><%= link_to t(".delete"), admin_tv_show_season_path(@tv_show, season), method: :delete %></p>
+
+<br>
