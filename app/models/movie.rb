@@ -12,6 +12,12 @@ class Movie < ApplicationRecord
   scope :top_new_more, ->{offset Settings.movies.top}
   scope :top_score_more, ->{offset Settings.movies.top}
 
+  scope :search_by_name, ->(keyword){where("name LIKE ?", "%#{keyword}%")}
+  search_by_release_year = lambda do |keyword|
+    where("extract(year from release_date) = ?", keyword)
+  end
+  scope :search_by_release_year, search_by_release_year
+
   ATTR = %i(name release_date critic_score audience_score info poster).freeze
 
   validates :name, presence: true,

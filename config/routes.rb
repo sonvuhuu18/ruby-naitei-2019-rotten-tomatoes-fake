@@ -22,4 +22,5 @@ Rails.application.routes.draw do
     root "dashboard#index"
   end
   resources :news
+  resources :search
 end
