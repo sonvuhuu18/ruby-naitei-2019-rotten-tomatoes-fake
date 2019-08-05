@@ -195,6 +195,7 @@ en:
         explain1: "The percentage of Approved Tomatometer Critics who have given this movie a positive review."
         explain2: "The percentage of users who rated this 3.5 stars or higher."
         comment: "What did you think of the moview ?"
+      no_review: "No reviewed yet!"
 
   tv_shows:
     not_found: "TvShow not found!"
@@ -386,3 +387,7 @@ en:
       title: "Sub: New Account"
       note: "You have 4 new notification."
       time: "11.00 am Today"
+  reviews:
+    reviewed: "Already reviewed"
+    form:
+      submit: "Submit"

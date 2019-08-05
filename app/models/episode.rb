@@ -11,6 +11,11 @@ class Episode < ApplicationRecord
     length: {maximum: Settings.episodes.info_max_length}
   validate :unique_episode_number
 
+  def score user_role
+    medium.reviews
+          .joins(:user).where(users: {role: user_role}).average(:score) || 0
+  end
+
   private
 
   def unique_episode_number

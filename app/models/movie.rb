@@ -24,4 +24,9 @@ class Movie < ApplicationRecord
     length: {maximum: Settings.movies.name_max_length}
   validates :info, presence: true,
     length: {maximum: Settings.movies.info_max_length}
+
+  def score user_role
+    medium.reviews
+          .joins(:user).where(users: {role: user_role}).average(:score) || 0
+  end
 end

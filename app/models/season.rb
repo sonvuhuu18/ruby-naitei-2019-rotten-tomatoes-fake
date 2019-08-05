@@ -10,6 +10,12 @@ class Season < ApplicationRecord
     length: {maximum: Settings.seasons.info_max_length}
   validate :unique_season_number
 
+  def score user_role
+    arr = episodes.map{|e| e.score(user_role)}.reject(&:zero?)
+    return 0 if arr&.any?
+    arr.reduce(:+) / arr.size
+  end
+
   private
 
   def unique_season_number

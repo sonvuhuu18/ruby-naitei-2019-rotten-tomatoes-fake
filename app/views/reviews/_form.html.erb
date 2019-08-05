@@ -1,0 +1,17 @@
+<%= form_for @review do |f| %>
+  <%= f.label t ".content" %>
+  <%= f.text_field :content, class: "form-control", required: true %>
+
+  <div class="rate">
+    <% Settings.reviews.score_range.each do |score| %>
+      <%= f.radio_button :score, 11-score, {id: "st#{score}"}%>
+      <%= label_tag "st#{score}", "" %>
+    <% end %>
+  </div><br><br>
+
+  <%= f.hidden_field :medium_id, {value: medium_id} %>
+
+  <div class="text-right">
+    <%= f.button t(".submit"), type: "submit", class: "btn btn-warning btn-sm" %>
+  </div><br>
+<% end %>
