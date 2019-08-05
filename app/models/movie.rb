@@ -18,4 +18,14 @@ class Movie < ApplicationRecord
     length: {maximum: Settings.movies.name_max_length}
   validates :info, presence: true,
     length: {maximum: Settings.movies.info_max_length}
+
+  def critic_score
+    medium.reviews
+          .joins(:user).where(users: {role: :critic}).average(:score) || 0
+  end
+
+  def audience_score
+    medium.reviews
+          .joins(:user).where.not(users: {role: :critic}).average(:score) || 0
+  end
 end

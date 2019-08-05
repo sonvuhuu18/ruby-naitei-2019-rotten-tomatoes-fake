@@ -50,6 +50,10 @@ class User < ApplicationRecord
     update_attributes remember_digest: nil
   end
 
+  def reviewed? reviewable
+    reviewable.reviews.where(user_id: id).exists?
+  end
+
   private
 
   def downcase_email

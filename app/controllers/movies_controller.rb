@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  include ReviewsHelper
   before_action :load_movie, :build_user, only: :show
 
   def index
@@ -11,6 +12,14 @@ class MoviesController < ApplicationController
 
     @top_score_show = Movie.create_top_score.top_score_show
     @top_score_more = @top_score_show.top_score_more
+
+    @review = Review.new
+
+    @critic_score = @movie.critic_score
+    @critic_score = @critic_score == 0 ? "N/A" : @critic_score.round(1)
+
+    @audience_score = @movie.audience_score
+    @audience_score = @audience_score == 0 ? "N/A" : @audience_score.round(1)
   end
 
   private
