@@ -3,7 +3,7 @@ class NewsController < ApplicationController
   before_action :build_user, except: %i(create update destroy)
 
   def index
-    @all_news = News.create_desc.page(params[:page]).per Settings.news.paginate
+    @all_news = News.update_desc.page(params[:page]).per Settings.news.paginate
   end
 
   def new
@@ -48,7 +48,7 @@ class NewsController < ApplicationController
   private
 
   def news_params
-    params.require(:news).permit :content
+    params.require(:news).permit News::ATTR
   end
 
   def load_news

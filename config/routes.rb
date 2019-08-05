@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         resources :episodes, except: :index
       end
     end
+    resources :news, except: %i(new create edit)
     resources :celebrities
     resources :celebrity_media, only: %i(create destroy)
     root "dashboard#index"

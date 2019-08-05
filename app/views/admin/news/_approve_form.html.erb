@@ -1,0 +1,4 @@
+<%= form_for [:admin, news], remote: true do |f| %>
+  <%= f.hidden_field :status, {value: Settings.news.status.approved}%>
+  <%= f.submit t(".approve"), class: "btn btn-primary" %>
+<% end %>

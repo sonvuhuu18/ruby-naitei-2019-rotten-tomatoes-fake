@@ -171,6 +171,11 @@ en:
       celebrity_medium:
         destroy: "Delete"
         sure: "Are you sure?"
+    news:
+      approve_form:
+        approve: Approved
+      reject_form:
+        reject: Reject
 
   movies:
     show:
@@ -292,6 +297,9 @@ en:
     destroy:
       deleted_success: "News Deleted"
       delete_failed: "Delete News Failed !"
+    news:
+      edit: "Edit this article"
+      destroy: "Destroy this article"
   time:
     formats:
       short: "%d-%m-%Y"

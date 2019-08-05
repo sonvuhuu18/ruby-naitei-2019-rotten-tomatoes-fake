@@ -1,0 +1,4 @@
+<%= form_for [:admin, news], remote: true do |f| %>
+  <%= f.hidden_field :status, {value: Settings.news.status.rejected}%>
+  <%= f.submit t(".reject"), class: "btn btn-danger" %>
+<% end %>
