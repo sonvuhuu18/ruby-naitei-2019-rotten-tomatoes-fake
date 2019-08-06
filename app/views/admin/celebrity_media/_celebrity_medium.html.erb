@@ -1,0 +1,7 @@
+<p>
+  <%= celebrity_medium.role.capitalize %>:
+  <%= celebrity_medium.celebrity.name %>
+
+  <%= link_to t(".destroy"), admin_celebrity_medium_path(celebrity_medium), method: :delete, data: {confirm: t(".sure")} %>
+</p>
+<br>

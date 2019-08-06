@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       end
     end
     resources :celebrities
+    resources :celebrity_media, only: %i(create destroy)
     root "dashboard#index"
   end
   resources :news
