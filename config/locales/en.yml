@@ -304,6 +304,13 @@ en:
       signup: "Sign up now!"
       checkbox: "Remember me on this computer"
 
+  search:
+    index:
+      search_result: "Search Result"
+      movies: "Movies"
+      tv_shows: "TvShows"
+      found: "Found"
+
   news_title: "News"
   movies_title: "Movies & DVDS"
   tvshow_title: "TVShow"

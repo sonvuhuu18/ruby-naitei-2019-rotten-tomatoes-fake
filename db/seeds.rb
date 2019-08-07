@@ -68,7 +68,7 @@ Movie.create! name: "Roma",
 
 14.times do |n|
   name = Faker::Lorem.sentence 3
-  release_date = Faker::Date.between 2.days.ago, Date.today
+  release_date = Faker::Date.between 2.years.ago, Date.today
   info = Faker::Lorem.paragraph 15, false, 15
 
   Movie.create! name: name,
@@ -117,7 +117,7 @@ end
 seasons = Season.all
 seasons.each do |season|
   Faker::Number.within(5..10).times do |n|
-    release_date = Faker::Date.between 100.days.ago, Date.today
+    release_date = Faker::Date.between 10.years.ago, Date.today
     season_id = season.id
     info = Faker::Lorem.paragraph 15, false, 15
     episode_number = n + 1

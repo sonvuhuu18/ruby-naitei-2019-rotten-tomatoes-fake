@@ -1,0 +1,25 @@
+<%= content_for :slider do %>
+<div class="slider-area fake-slider container"></div>
+<% end %>
+<div class="container content-margin-top reset-padding">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-9">
+      <h2 class="text-danger movie_head"> <%= t ".search_result" %> </h2>
+      <div class="row">
+        <h3 class="text-danger movie_head"> <%= t(".found") + " " + @movies.size.to_s + " " + t(".movies") %> </h3>
+        <br>
+        <% @movies.each do |movie| %>
+          <%= render movie %>
+        <% end %>
+      </div>]
+      <div class="row">
+        <h3 class="text-danger movie_head"> <%= t(".found") + " " + @tvshows.size.to_s + " " + t(".tv_shows") %> </h3>
+        <br>
+        <% @tvshows.each do |tvshow| %>
+          <%= render tvshow %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
