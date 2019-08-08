@@ -11,38 +11,31 @@
         </button>
       </div>
       <div class="card-body">
-        <%= form_for @user, html: {class: "form-signin"}, url:
-                  signup_path do |f| %>
-        <%= render "shared/error_messages" %>
-        <div class="form-label-group">
-          <%= f.label t "name" %>
-          <%= f.text_field :name, class: "form-control",
-            required: true %>
-        </div>
+        <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"} do |f| %>
+          <div class="form-label-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, autofocus: true, autocomplete: "email", class: "form-control", required: true  %>
+          </div>
 
-        <div class="form-label-group">
-          <%= f.label t "email.title" %>
-          <%= f.email_field :email, class: "form-control",
-            required: true %>
-        </div>
+          <div class="form-label-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", required: true  %>
+          </div>
 
-        <div class="form-label-group">
-          <%= f.label t "password.title" %>
-          <%= f.password_field :password, class: "form-control",
-            required: true %>
-        </div>
+          <div class="form-label-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", required: true  %>
+          </div>
 
-        <div class="form-label-group">
-          <%= f.label t "password.confirm" %>
-          <%= f.password_field :password, class: "form-control",
-            required: true %>
-        </div>
+          <div class="form-label-group">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", required: true  %>
+          </div>
 
-        <%= f.button t("sign_up.title"), type: "submit", class:
-          "btn btn-lg btn-primary btn-block
-          text-uppercase" %>
-        <hr class="my-4">
+          <%= f.button t("sign_up.title"), type: "submit", class: "btn btn-lg btn-primary btn-block text-uppercase" %>
+
         <% end %>
+
       </div>
     </div>
   </div>
