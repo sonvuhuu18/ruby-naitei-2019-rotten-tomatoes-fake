@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
   resources :news
   resources :search
+  resources :reviews, only: %i(create destroy)
 end

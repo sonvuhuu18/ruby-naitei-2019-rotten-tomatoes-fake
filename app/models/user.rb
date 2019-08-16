@@ -18,6 +18,10 @@ class User < ApplicationRecord
     presence: true,
     length: {maximum: Settings.users_name_max_length}
 
+  def reviewed? reviewable
+    reviewable.reviews.where(user_id: id).exists?
+  end
+
   private
 
   def downcase_email

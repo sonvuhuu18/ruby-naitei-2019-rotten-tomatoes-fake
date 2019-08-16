@@ -22,4 +22,10 @@ class TvShow < ApplicationRecord
     length: {maximum: Settings.tvshows.name_max_length}
   validates :info, presence: true,
     length: {maximum: Settings.tvshows.info_max_length}
+
+  def score user_role
+    arr = seasons.map{|s| s.score(user_role)}.reject(&:zero?)
+    return 0 if arr&.any?
+    arr.reduce(:+) / arr.size
+  end
 end

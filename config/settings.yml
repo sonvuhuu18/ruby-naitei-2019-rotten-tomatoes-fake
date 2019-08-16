@@ -42,3 +42,6 @@ celebrities:
 news:
   content_max_length: 10000
   paginate: 10
+
+reviews:
+  score_range: !ruby/range 1..10
