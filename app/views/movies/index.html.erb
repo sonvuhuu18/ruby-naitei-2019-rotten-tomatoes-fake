@@ -3,8 +3,7 @@
 <% end %>
 <div class="container content-margin-top reset-padding">
 <p id="notice"><%= notice %></p>
-
-<div class="row">
+  <div class="row">
     <div class="col-9">
       <h2 class="text-danger movie_head"><%= t "section.title_moviews" %> <span><%= t "section.span_moviews"
       %></span></h2>
@@ -25,7 +24,7 @@
           </div>
         <% end %>
       </div>
-      <%= paginate @movies, theme: "twitter-bootstrap-3",
+      <%= paginate @movies, theme: "twitter-bootstrap-4",
                    pagination_class: "pagination-sm"%>
     </div>
     <div class="col-3 reset-padding">

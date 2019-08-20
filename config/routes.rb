@@ -9,7 +9,12 @@ Rails.application.routes.draw do
       resources :episodes, only: :show
     end
   end
+  resources :users
   resources :celebrities, only: %i(index show)
+  resources :news
+  resources :reviews, only: %i(create destroy)
+  resources :search, only: :index
+
   namespace :admin do
     resources :movies
     resources :users, except: %i(new create edit)
@@ -24,10 +29,5 @@ Rails.application.routes.draw do
     resources :requests, only: %i(index update destroy)
     root "dashboard#index"
   end
-  resources :news
-  resources :users
-  resources :search
-  resources :reviews, only: %i(create destroy)
-  resources :users, only: :show
   resources :requests, only: :create
 end

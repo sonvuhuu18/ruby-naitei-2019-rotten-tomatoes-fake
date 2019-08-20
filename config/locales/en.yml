@@ -1,7 +1,8 @@
 en:
   not_found: "Can't find any movies with your keywords."
-  project_title: "Home Video - Ftage"
   kw_blank: "Keyword can't be blank"
+  add_celebiry: "Add Celebrity"
+  project_title: "Rotten Potatoes - Review Film"
   users:
     new:
       h1: "Sign up"
@@ -73,6 +74,7 @@ en:
         edit: "Edit"
         destroy: "Destroy"
         sure: "Are you sure?"
+        add_season: "Add a season: "
       new:
         title: "New TvShow"
       edit:
@@ -83,8 +85,7 @@ en:
       destroy:
         deleted_success: "TvShow Deleted"
         delete_failed: "Delete Tvshow Failed !"
-      show:
-        add_season: "Add a season: "
+
     seasons:
       create:
         create_success: "Season Created"
@@ -99,7 +100,7 @@ en:
         info: "Info"
       season:
         edit: "Edit this season: "
-        delete: "Delete season"
+        delete: "Delete this season"
       edit:
         edit: "Editing season "
       show:
@@ -309,6 +310,23 @@ en:
       create_failed: "Create News Failed!"
     show:
       title: "Show News"
+
+  reviews:
+    form:
+      content: "Content"
+      score: "Score"
+      submit: "Submit"
+    index:
+      title: "Reviews"
+      show: "Show"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+      new: "New Review"
+    create:
+      create_success: "Review Created"
+      create_failed: "Create Review Failed!"
+    show:
+      title: "Show Review"
       edit: "Edit"
       destroy: "Destroy"
       sure: "Are you sure?"
@@ -320,14 +338,37 @@ en:
       update_success: "News Updated"
       update_fail: "Update News Failed !"
     destroy:
-      deleted_success: "News Deleted"
       delete_failed: "Delete News Failed !"
     news:
       edit: "Edit this article"
       destroy: "Destroy this article"
+      title: "New Review"
+      deleted_success: "Review Deleted"
+    review:
+      sure: "Are you sure?"
+      delete: "Delete"
+    reviewed: "Already reviewed"
+      form:
+        content: "Content"
+        score: "Score"
+        submit: "Submit"
+      index:
+        title: "Reviews"
+        show: "Show"
+        destroy: "Destroy"
+        sure: "Are you sure?"
+        new: "New Review"
+      create:
+        create_success: "Review Created"
+        create_failed: "Create Review Failed!"
+      show:
+        title: "Show Review"
+      review:
+        sure: "Are you sure?"
   time:
     formats:
       short: "%d-%m-%Y"
+      long: "%d-%m-%Y %H:%M"
       confirmation: "Confirmation"
       submit: "Create my account"
   sessions:
@@ -352,6 +393,8 @@ en:
   login_title: "Login"
   logout: "Logout"
   signup_title: "Sign Up"
+  profile: "Profile"
+  setting: "Setting"
   subcribe: "Subcribe"
   name: "Name: "
   submit: "Submit"
@@ -384,15 +427,19 @@ en:
   up_role:
     title: "Request change role to critic"
   request:
-    title: Your Requests
+    title: "Your Requests"
   no_post: "There are no posts."
   no_news: "There are no news. "
 
   slider:
-    title1: "title slider 1"
-    title2: "title slider 2"
-    title3: "title slider 3"
-    title4: "title slider 4"
+    title1: "For Honor - O Filme (Dublado)"
+    title1_sub: "23/3/2019"
+    title2: "Prehistoric Shark"
+    title2_sub: "23/4/2019"
+    title3: "Ant-Man"
+    title3_sub: "23/1/2019"
+    title4: "AQUAMAN"
+    title4_sub: "23/8/2018"
     title5: "title slider 5"
 
   footer:
@@ -438,25 +485,6 @@ en:
       title: "Sub: New Account"
       note: "You have 4 new notification."
       time: "11.00 am Today"
-  reviews:
-    reviewed: "Already reviewed"
-    form:
-      content: "Content"
-      score: "Score"
-      submit: "Submit"
-    index:
-      title: "Reviews"
-      show: "Show"
-      destroy: "Destroy"
-      sure: "Are you sure?"
-      new: "New Review"
-    create:
-      create_success: "Review Created"
-      create_failed: "Create Review Failed!"
-    show:
-      title: "Show Review"
-    review:
-      sure: "Are you sure?"
   Search: "Search"
   requests:
     create:
