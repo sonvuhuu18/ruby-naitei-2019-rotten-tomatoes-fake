@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :rememberable, :validatable
   has_many :news, dependent: :destroy
@@ -13,7 +11,9 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  ATTR = %i(name email role password password_confirmation).freeze
+  # ATTR = %i(name email organization role password password_confirmation).freeze
+  ATTR = %i(name email organization role).freeze
+
 
   validates :name,
     presence: true,

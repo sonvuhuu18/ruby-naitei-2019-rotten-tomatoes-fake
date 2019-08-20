@@ -1,24 +1,18 @@
 class SeasonsController < ApplicationController
-  before_action :load_season, :build_movie_tvshow, only: :show
-  def show; end
+  before_action :build_movie_tvshow, only: :show
+  def show
+    @user = User.new
+    @tv_show = TvShow.find_by id: params[:tv_show_id]
+    @season = Season.find_by id: params[:id]
+  end
 
   private
 
-  def load_season
-    @season = Season.find_by id: params[:id]
-
-    if @season
-      @critic_score = @season.score :critic
-      @audience_score = @season.score :normal
-      @celebrities = Season.celebrities_list @season.id
-    else
-      flash[:danger] = t ".not_found"
-      redirect_to seasons_url
-    end
-  end
-
   def build_movie_tvshow
     @top_score_movie = Movie.create_top_score
-    @top_score_tvshow = TvShow.create_top_score
+    @top_score_movie_tab = @top_score_movie.take 15
+
+    @top_score_tvshow = TvShow.all.create_top_score
+    @top_score_tvshow_tab = @top_score_tvshow.take 15
   end
 end
