@@ -1,6 +1,6 @@
 /* =======================================
 
-	Template: Flim Studio
+  Template: Flim Studio
 
 ========================================== */
 
@@ -712,6 +712,7 @@
 }
 .user-left-part{
   margin: 0px;
+  width: 100%;
 }
 .user-image img{
   width:100px;

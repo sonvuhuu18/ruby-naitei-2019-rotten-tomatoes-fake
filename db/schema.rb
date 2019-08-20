@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_20_032617) do
+ActiveRecord::Schema.define(version: 2019_08_20_073400) do
 
   create_table "celebrities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -83,6 +83,14 @@ ActiveRecord::Schema.define(version: 2019_08_20_032617) do
     t.index ["user_id"], name: "index_news_on_user_id"
   end
 
+  create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status"
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.integer "score"
@@ -128,6 +136,7 @@ ActiveRecord::Schema.define(version: 2019_08_20_032617) do
   add_foreign_key "celebrity_media", "media"
   add_foreign_key "episodes", "seasons"
   add_foreign_key "news", "users"
+  add_foreign_key "requests", "users"
   add_foreign_key "reviews", "media"
   add_foreign_key "reviews", "users"
   add_foreign_key "seasons", "tv_shows"

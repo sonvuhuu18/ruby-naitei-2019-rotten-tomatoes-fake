@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<h1><%= t ".title" %></h1>
+<br>
+<br>
+<div class="col-12 mb-30">
+  <div class="box">
+    <div class="box-body">
+      <div class="table-responsive">
+        <table class="table table-vertical-middle table-selectable" id="requests">
+          <thead>
+          <tr>
+            <th><span><%= t ".id" %></span></th>
+            <th><span><%= t ".requested_user" %></span></th>
+            <th><span><%= t ".request_status" %></span></th>
+            <th><span><%= t ".edit" %></span></th>
+            <th><span><%= t ".delete" %></span></th>
+          </tr>
+          </thead>
+          <tbody>
+            <% @requests.each do |request|%>
+              <tr id="request-<%= request.id %>">
+                <%= render request %>
+              </tr>
+            <% end %>
+          </tbody><!-- Table Body End -->
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<%= paginate @requests, theme: "twitter-bootstrap-3",pagination_class: "pagination-sm" %>

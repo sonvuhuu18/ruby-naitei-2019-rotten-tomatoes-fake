@@ -1,0 +1,15 @@
+<td>#<%= request.id %></td>
+<td><h4><%= link_to request.user_name, [:admin, request.user] %></h4></td>
+<td><%= request.status.capitalize %></td>
+<td>
+  <div>
+    <%= render("action_form", request: request) if request.pending? %>
+  </div>
+</td>
+<td>
+  <h4>
+    <%= link_to [:admin, request], method: :delete, data: {confirm: t(".sure")} do %>
+      <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <% end %>
+  </h4>
+</td>

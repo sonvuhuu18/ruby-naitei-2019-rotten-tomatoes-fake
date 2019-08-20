@@ -373,6 +373,20 @@ en:
 
   email:
     title: "Email: "
+  organization:
+    title: "Organization: "
+  edit_profile:
+    title: "Edit Profile"
+  your_new:
+    title: "Your News"
+  post_review:
+    title: "Post Reviews"
+  up_role:
+    title: "Request change role to critic"
+  request:
+    title: Your Requests
+  no_post: "There are no posts."
+  no_news: "There are no news. "
 
   slider:
     title1: "title slider 1"
@@ -409,7 +423,11 @@ en:
       title: "Admin Dashboard"
       h1: "Admin"
       left_side:
+        movies: "Movies"
         tv_show: "TV Shows"
+        celebrities: "Celebrities"
+        news: "News"
+        requests: "Requests"
   nameteam: "Team TSC"
   nameweb: "Rotten Tomatoes &copy;"
   admin_gui:
@@ -440,3 +458,8 @@ en:
     review:
       sure: "Are you sure?"
   Search: "Search"
+  requests:
+    create:
+      create_success: "Requests created"
+      create_failed: "Already requested!"
+      wrong_role: "You cannot change role!"

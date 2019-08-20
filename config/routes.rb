@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :celebrities, only: %i(index show)
   namespace :admin do
     resources :movies
-    resources :users, except: %i(new create)
+    resources :users, except: %i(new create edit)
     resources :tv_shows do
       resources :seasons, except: :index do
         resources :episodes, except: :index
@@ -21,10 +21,13 @@ Rails.application.routes.draw do
     resources :news, except: %i(new create edit)
     resources :celebrities
     resources :celebrity_media, only: %i(create destroy)
+    resources :requests, only: %i(index update destroy)
     root "dashboard#index"
   end
   resources :news
   resources :users
   resources :search
   resources :reviews, only: %i(create destroy)
+  resources :users, only: :show
+  resources :requests, only: :create
 end

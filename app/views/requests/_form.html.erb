@@ -1,0 +1,5 @@
+<%= form_for user.requests.build do |f| %>
+  <%= f.hidden_field :user_id, {value: user.id} %>
+  <%= f.hidden_field :status, {value: Settings.requests.status.pending} %>
+  <%= f.button t("up_role.title"), type: "submit", class: "btn btn-primary btn-block btn-up-role" %>
+<% end %>

@@ -5,6 +5,7 @@ class User < ApplicationRecord
     :rememberable, :validatable
   has_many :news, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :requests, dependent: :destroy
 
   enum role: {admin: 0, moderator: 1, critic: 2, normal: 3}
 

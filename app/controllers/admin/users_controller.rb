@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  before_action :load_user, only: :show
+class Admin::UsersController < Admin::BaseController
+  before_action :load_user, only: %i(show update destroy)
 
   def show; end
 

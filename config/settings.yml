@@ -55,3 +55,9 @@ news:
 
 reviews:
   score_range: !ruby/range 1..10
+
+requests:
+  status:
+    pending: :pending
+    approved: :approved
+    rejected: :rejected
