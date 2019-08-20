@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, controllers: {registrations: "users/registrations"}
   get "/home", to: "static_pages#home"
   root "static_pages#home"
