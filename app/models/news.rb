@@ -10,6 +10,8 @@ class News < ApplicationRecord
 
   ATTR = %i(content status title).freeze
 
+  validates :title, presence: true,
+    length: {maximum: Settings.news.title_max_length}
   validates :content, presence: true,
     length: {maximum: Settings.news.content_max_length}
 end

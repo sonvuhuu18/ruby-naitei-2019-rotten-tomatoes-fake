@@ -5,7 +5,7 @@
       <%= f.text_field :title, class: "form-control" %>
 
       <%= f.label t ".content" %>
-      <%= f.text_area :content, class: "form-control", rows: 30 %>
+      <%= f.cktext_area :content, class: "ckeditor", rows: 30 %>
 
       <%= f.hidden_field :status, {value: Settings.news.status.pending}%>
 
@@ -13,3 +13,4 @@
     <% end %>
   </div>
 </div>
+<%= javascript_include_tag Ckeditor.cdn_url %>

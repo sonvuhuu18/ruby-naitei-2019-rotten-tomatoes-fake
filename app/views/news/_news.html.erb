@@ -5,7 +5,7 @@
     </div>
     <h4 class="card-title text-right"><%= news.user_name %></h3>
     <p class="card-text">
-      <%= news.content %>
+      <%= sanitize news.content %>
     </p>
     <div class="row">
       <% if current_user == news.user %>
