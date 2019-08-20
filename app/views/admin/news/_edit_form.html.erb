@@ -1,0 +1,4 @@
+<div class="btn-group">
+  <%= render("approve_form", news: news) unless news.approved? %>
+  <%= render("reject_form", news: news) unless news.rejected? %>
+</div>

@@ -42,6 +42,12 @@ celebrities:
 news:
   content_max_length: 10000
   paginate: 10
+  status:
+    pending: :pending
+    approved: :approved
+    rejected: :rejected
+  title:
+    truncate: 4
 
 reviews:
   score_range: !ruby/range 1..10

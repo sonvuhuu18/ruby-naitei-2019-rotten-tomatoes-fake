@@ -1,0 +1,9 @@
+<h3 class="text-center text-warning"><%= @news.title %></h3><br>
+<div class="box">
+  <div class="box-body">
+    <p class="text-white"><%= @news.content %></p>
+  </div>
+</div>
+<br>
+<br>
+<span class="badge-success badge"><%= link_to t(".back"), admin_news_index_path %></span>

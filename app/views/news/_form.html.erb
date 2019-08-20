@@ -1,6 +1,15 @@
-<%= form_for @news do |f| %>
-  <%= f.label t ".content" %>
-  <%= f.text_field :content, class: "form-control" %>
+<div class="row">
+  <div class="col-8 offset-2">
+    <%= form_for @news do |f| %>
+      <%= f.label t ".title" %>
+      <%= f.text_field :title, class: "form-control" %>
 
-  <%= f.submit t ".submit", class: "btn btn-primary" %>
-<% end %>
+      <%= f.label t ".content" %>
+      <%= f.text_area :content, class: "form-control", rows: 30 %>
+
+      <%= f.hidden_field :status, {value: Settings.news.status.pending}%>
+
+      <%= f.submit t ".submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

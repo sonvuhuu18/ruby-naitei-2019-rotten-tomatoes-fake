@@ -147,9 +147,11 @@ users_news = users.last(users.size - 2)
 users_news.each do |user|
   Faker::Number.within(0..5).times do |n|
     user_id = user.id
+    title = Faker::Lorem.sentence 10
     content = Faker::Lorem.paragraph 50, false, 15
 
     News.create! user_id: user_id,
+      title: title,
       content: content
   end
 end
