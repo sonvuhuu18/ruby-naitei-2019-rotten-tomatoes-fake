@@ -11,9 +11,19 @@ class Episode < ApplicationRecord
     length: {maximum: Settings.episodes.info_max_length}
   validate :unique_episode_number
 
+  scope :celebrities_list, (
+    lambda do |episode_id|
+      Celebrity.where(
+        id: includes(medium:
+          [celebrity_media: :celebrity]).where(id: episode_id)
+                                        .pluck("celebrities.id")
+      )
+    end)
+
   def score user_role
     medium.reviews
-          .joins(:user).where(users: {role: user_role}).average(:score) || 0
+          .joins(:user).merge(User.role(user_role))
+          .average(:score) || Settings.not_review_yet
   end
 
   private
