@@ -5,7 +5,8 @@
   <p id="notice"><%= notice %></p>
   <div class="row">
     <div class="col-9">
-      <h2 class="text-danger movie_head"><%= t ".title" %> </h2>
+      <h2 class="news-header text-center"><%= t ".title" %></h2>
+      <h4><%= link_to "<span class='badge badge-warning'>Create</span>".html_safe, new_news_path %></h4>
       <div class="row">
         <% @all_news.each do |news| %>
           <%= render partial: "list_news", locals: {news: news} %>

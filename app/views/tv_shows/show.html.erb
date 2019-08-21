@@ -42,11 +42,7 @@
           <div class="row">
             <div class="col-6 text-right">
               <h3><span class="badge-warning badge">
-<<<<<<< HEAD
-                <%= @critic_score.zero? ? "N/A" : @critic_score.round(1) %></span></h3>
-=======
-                  <%= @tv_show.critic_score.round(1) %></span></h3>
->>>>>>> advance search  + user-profile
+                  <%= @critic_score %></span></h3>
               <h4 class="text-muted">
                 <%= t "movies.show.right_box.tomascore" %>
               </h4>
@@ -56,11 +52,7 @@
             </div>
             <div class="col-6">
               <h3><span class="badge-warning badge">
-<<<<<<< HEAD
-                <%= @audience_score.zero? ? "N/A" : @audience_score.round(1) %></span></h3>
-=======
-                  <%= @tv_show.audience_score.round(1) %></span></h3>
->>>>>>> advance search  + user-profile
+                  <%= @audience_score %></span></h3>
               <h4 class="text-muted">
                 <%= t "movies.show.right_box.audiscore" %>
               </h4>
@@ -74,7 +66,7 @@
       <div class="row">
         <div class="col-12">
           <h3 class="text-center bg-danger"><span class="text-white ">
-              <%= t ".season" %></span></h3>
+              <%= t "seasons" %></span></h3>
           <div class="row">
             <% @tv_show.seasons.each do |season| %>
               <div class="col-4">
