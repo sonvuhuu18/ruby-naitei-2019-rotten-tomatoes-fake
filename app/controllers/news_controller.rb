@@ -64,7 +64,6 @@ class NewsController < ApplicationController
     return if @news.approved? || current_user == @news.user
     flash[:danger] = t ".not_approved"
     redirect_to news_index_path
-
   end
 
   def build_movie_tvshow
