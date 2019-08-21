@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
   end
   resources :news
+  resources :users
   resources :search
   resources :reviews, only: %i(create destroy)
 end
