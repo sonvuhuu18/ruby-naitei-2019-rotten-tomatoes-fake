@@ -413,7 +413,7 @@ en:
   up_role:
     title: "Request change role to critic"
   request:
-    title: Your Requests
+    title: "Your Requests"
   no_post: "There are no posts."
   no_news: "There are no news. "
 
@@ -471,25 +471,6 @@ en:
       title: "Sub: New Account"
       note: "You have 4 new notification."
       time: "11.00 am Today"
-  reviews:
-    reviewed: "Already reviewed"
-    form:
-      content: "Content"
-      score: "Score"
-      submit: "Submit"
-    index:
-      title: "Reviews"
-      show: "Show"
-      destroy: "Destroy"
-      sure: "Are you sure?"
-      new: "New Review"
-    create:
-      create_success: "Review Created"
-      create_failed: "Create Review Failed!"
-    show:
-      title: "Show Review"
-    review:
-      sure: "Are you sure?"
   Search: "Search"
   requests:
     create:

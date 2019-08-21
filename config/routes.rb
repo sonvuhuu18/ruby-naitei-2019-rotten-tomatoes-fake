@@ -29,10 +29,5 @@ Rails.application.routes.draw do
     resources :requests, only: %i(index update destroy)
     root "dashboard#index"
   end
-  resources :news
-  resources :users
-  resources :search
-  resources :reviews, only: %i(create destroy)
-  resources :users, only: :show
   resources :requests, only: :create
 end
