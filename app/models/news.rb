@@ -7,6 +7,7 @@ class News < ApplicationRecord
 
   scope :create_desc, ->{order created_at: :desc}
   scope :update_desc, ->{order updated_at: :desc}
+  scope :approved, ->{where status: :approved}
 
   ATTR = %i(content status title).freeze
 
