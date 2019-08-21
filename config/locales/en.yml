@@ -129,7 +129,6 @@ en:
         edit: "Edit"
         back: "Back"
       duplicate: "Duplicated Episode number!"
-
     celebrities:
       not_found: "Celebrity not found!"
       form:
@@ -176,7 +175,6 @@ en:
       celebrity_medium:
         destroy: "Delete"
         sure: "Are you sure?"
-
     news:
       approve_form:
         approve: Approved
@@ -248,18 +246,6 @@ en:
       deleted_success: "TvShow Deleted"
       delete_failed: "Delete Tvshow Failed !"
 
-  seasons:
-    show:
-      season: "Season"
-      not_found: "Season not found!"
-
-  episodes:
-    show:
-      season: "Season"
-      episode: "Episode"
-      not_found: "Episode not found!"
-      no_review_yet: "No review yet"
-
   celebrities:
     not_found: "Celebrity not found!"
     form:
@@ -298,6 +284,7 @@ en:
     form:
       content: "Content"
       submit: "Submit"
+      title: "Title"
     index:
       title: "News"
       show: "Show"
@@ -310,6 +297,23 @@ en:
       create_failed: "Create News Failed!"
     show:
       title: "Show News"
+      edit: "Edit"
+      destroy: "Destroy"
+      sure: "Are you sure?"
+    new:
+      title: "New News"
+    edit:
+      title: "Editing News"
+    update:
+      update_success: "News Updated"
+      update_fail: "Update News Failed !"
+    destroy:
+      deleted_success: "News Deleted"
+      delete_failed: "Delete News Failed !"
+    news:
+      edit: "Edit this article"
+      destroy: "Destroy this article"
+      sure: "Are you sure?"
 
   reviews:
     form:
@@ -347,24 +351,6 @@ en:
     review:
       sure: "Are you sure?"
       delete: "Delete"
-    reviewed: "Already reviewed"
-      form:
-        content: "Content"
-        score: "Score"
-        submit: "Submit"
-      index:
-        title: "Reviews"
-        show: "Show"
-        destroy: "Destroy"
-        sure: "Are you sure?"
-        new: "New Review"
-      create:
-        create_success: "Review Created"
-        create_failed: "Create Review Failed!"
-      show:
-        title: "Show Review"
-      review:
-        sure: "Are you sure?"
   time:
     formats:
       short: "%d-%m-%Y"
@@ -457,12 +443,12 @@ en:
     menu3: "menu3"
 
   section:
-      title_news: "NEWS OF THE"
-      span_week: "WEEK"
-      title_moviews: "MOVIES"
-      span_moviews: "& DVDS"
-      title_tv: "TV"
-      span_tv: "SHOWS"
+    title_news: "NEWS OF THE"
+    span_week: "WEEK"
+    title_moviews: "MOVIES"
+    span_moviews: "& DVDS"
+    title_tv: "TV"
+    span_tv: "SHOWS"
 
   layouts:
     admin:
@@ -480,4 +466,3 @@ en:
       title: "Sub: New Account"
       note: "You have 4 new notification."
       time: "11.00 am Today"
-  Search: "Search"
