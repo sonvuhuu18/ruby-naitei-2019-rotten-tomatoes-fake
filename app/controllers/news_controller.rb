@@ -2,7 +2,7 @@ class NewsController < ApplicationController
   before_action :authenticate_user!, except: %i(index show)
   before_action :load_news, except: %i(index new create)
   before_action :check_news, only: :show
-  before_action :build_user, :build_movie_tvshow, only: %i( index new )
+  before_action :build_movie_tvshow, only: %i( index new edit)
 
   def index
     @all_news = News.approved.update_desc.page(params[:page]).per Settings.news.paginate
@@ -65,10 +65,6 @@ class NewsController < ApplicationController
     return if @news.approved? || current_user == @news.user
     flash[:danger] = t ".not_approved"
     redirect_to news_index_path
-  end
-
-  def build_user
-    @user = User.new
   end
 
   def build_movie_tvshow

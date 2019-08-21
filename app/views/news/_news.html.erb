@@ -4,16 +4,17 @@
     <%= image_tag("home-video/trailer/1.jpg", class: "image-new-user") %>
     <div class="media-body">
       <h4><%= news.user_name %>
-        <small><i> <%= t "Posted on" %> <%= I18n.l(news.created_at.to_time, format: :long) %> </i></small></h4>
+        <small><i> <%= t "Posted on" %> <%= I18n.l(news.created_at.to_time, format: :long) %> </i></small>
+      </h4>
       <p><%= sanitize news.content %></p>
-      <% if current_user == news.user %>
-        <div class="col-4 offset-4">
-          <div class="btn-group">
-            <%= button_to t(".edit"), edit_news_path(news), method: :get, class: "btn btn-outline-primary btn-sm" %>
-            <%= button_to t(".destroy"), news, method: :delete, data: {confirm: t(".sure")}, class: "btn btn-danger btn-sm" %></td>
-          </div>
-        </div>
-      <% end %>
+      <div class="text-right">
+        <% if current_user == news.user %>
+          <h3>
+            <%= link_to '<i class="fa fa-pencil-square-o text-warning" aria-hidden="true"></i>'.html_safe, edit_news_path(news), method: :get %>
+            <%= link_to '<i class="fa fa-trash-o text-danger" aria-hidden="true"></i>'.html_safe, news, method: :delete, data: {confirm: t(".sure")} %>
+          </h3>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

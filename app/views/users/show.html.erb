@@ -6,9 +6,15 @@
     <div class="row user-left-part">
       <div class="col-md-3 col-sm-3 col-xs-12 user-profil-part pull-left">
         <div class="row ">
-          <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-            <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="rounded-circle">
-          </div>
+          <% if @user.avatar? %>
+            <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
+              <%= image_tag(@user.avatar.url, class: "rounded-circle") %>
+            </div>
+          <% else %>
+            <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
+              <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" class="rounded-circle">
+            </div>
+          <% end %>
           <div class="col-md-12 col-sm-12 col-xs-12 user-detail-section1 text-center">
             <% if current_user == @user %>
               <button id="btn-contact" (click)="clearModal()" data-toggle="modal" data-target="#contact" class="btn btn-success btn-block follow btn-edit">
@@ -34,16 +40,19 @@
                 <p><%= @user.email %></p>
               </div>
             </div>
-            <% if @user.organization %>
-              <div class="row">
-                <div class="col-md-4">
-                  <label><%= t "organization.title" %></label>
-                </div>
-                <div class="col-md-8">
-                  <p><%= @user.organization %></p>
-                </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <label><%= t "organization.title" %></label>
               </div>
-            <% end %>
+              <div class="col-md-8">
+                <% if @user.organization? %>
+                  <p><%= @user.organization %></p>
+                <% else %>
+                  <p> <%= t ".not_update_yet" %></p>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>

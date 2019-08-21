@@ -2,19 +2,22 @@ User.create! name: "Admin User",
   email: "admin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  role: 0
+  role: 0,
+  avatar: open("#{Rails.root}/portrait.jpg")
 
 User.create! name: "Moderator User",
   email: "user@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  role: 1
+  role: 1,
+  avatar: open("#{Rails.root}/portrait.jpg")
 
 User.create! name: "Critic User",
   email: "critic@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  role: 2
+  role: 2,
+  avatar: open("#{Rails.root}/portrait.jpg")
 
 5.times do |n|
   name = Faker::Name.name
@@ -25,7 +28,9 @@ User.create! name: "Critic User",
     email: email,
     password: password,
     password_confirmation: password,
-    role: 2
+    role: 2,
+    avatar: open("#{Rails.root}/portrait.jpg")
+
 end
 
 5.times do |n|
@@ -37,7 +42,9 @@ end
     email: email,
     password: password,
     password_confirmation: password,
-    role: 3
+    role: 3,
+    avatar: open("#{Rails.root}/portrait.jpg")
+
 end
 
 Movie.create! name: "Black Panther",
@@ -252,7 +259,7 @@ end
     date_of_birth: date_of_birth,
     gender: gender,
     nationality: nationality,
-    portrait: open("#{Rails.root}/poster.jpg")
+    portrait: open("#{Rails.root}/portrait.jpg")
 end
 
 users = User.all

@@ -12,6 +12,8 @@ en:
       password: "Password"
       password_confirmation: "Confirmation"
       submit: "Sign up"
+    show:
+      not_update_yet: "Not update yet !"
   shared:
     error:
       one: "The form contains 1 error."
@@ -477,3 +479,4 @@ en:
       create_success: "Requests created"
       create_failed: "Already requested!"
       wrong_role: "You cannot change role!"
+      time: "11.00 am Today"

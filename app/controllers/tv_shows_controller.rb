@@ -14,8 +14,8 @@ class TvShowsController < ApplicationController
     @tv_show = TvShow.find_by id: params[:id]
 
     if @tv_show
-      @critic_score = @tv_show.score :critic
-      @audience_score = @tv_show.score :normal
+      @critic_score = @tv_show.score(:critic).zero? ? "N/A" : @tv_show.score(:critic).round(1)
+      @audience_score = @tv_show.score(:normal).zero? ? "N/A" : @tv_show.score(:normal).round(1)
       @celebrities = TvShow.celebrities_list @tv_show.id
     else
       flash[:danger] = t ".not_found"
