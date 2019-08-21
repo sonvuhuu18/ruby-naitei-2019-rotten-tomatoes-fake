@@ -41,8 +41,8 @@ episodes:
 
 celebrities:
   name_max_length: 100
-  index_portrait_heigth: 400
-  index_portrait_width: 200
+  index_portrait_height: 400
+  index_portrait_width: 270
   portrait_accept: "image/jpeg,image/gif,image/png"
 
 news:
