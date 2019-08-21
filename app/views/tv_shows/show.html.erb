@@ -42,7 +42,7 @@
           <div class="row">
             <div class="col-6 text-right">
               <h3><span class="badge-warning badge">
-                  <%= @critic_score %></span></h3>
+                  <%= @critic_score.zero? ? "N/A" : @critic_score.round(1) %></span></h3>
               <h4 class="text-muted">
                 <%= t "movies.show.right_box.tomascore" %>
               </h4>
@@ -52,7 +52,7 @@
             </div>
             <div class="col-6">
               <h3><span class="badge-warning badge">
-                  <%= @audience_score %></span></h3>
+                  <%= @audience_score.zero? ? "N/A" : @audience_score.round(1) %></span></h3>
               <h4 class="text-muted">
                 <%= t "movies.show.right_box.audiscore" %>
               </h4>

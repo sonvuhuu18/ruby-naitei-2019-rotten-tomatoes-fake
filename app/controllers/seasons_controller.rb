@@ -5,10 +5,8 @@ class SeasonsController < ApplicationController
     @tv_show = TvShow.find_by id: params[:tv_show_id]
     @season = Season.find_by id: params[:id]
 
-    @critic_score = @season.score(:critic)
-                        .zero? ? "N/A" : @season.score(:critic).round(1)
-    @audience_score = @season.score(:normal)
-                          .zero? ? "N/A" : @season.score(:normal).round(1)
+    @critic_score = @season.score :critic
+    @audience_score = @season.score :normal
 
     @celebrities = Season.celebrities_list @season.id
   end
