@@ -24,10 +24,10 @@
               <li>
                 <ul>
                   <li>
-                    <%= link_to t "Home", root_path %>
+                    <%= link_to t("Home"), root_path %>
                   </li>
                   <li>
-                    <%= link_to t("logout"), logout_path, method: :delete %>
+                    <%= link_to t("logout"), destroy_user_session_path, method: :delete %>
                   </li>
                 </ul>
               </li>
