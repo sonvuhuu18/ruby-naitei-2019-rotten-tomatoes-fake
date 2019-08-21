@@ -1,7 +1,7 @@
 class PosterUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [Settings.movies.index_poster_heigth,
-    Settings.movies.index_poster_width]
+  process resize_to_fill: [Settings.movies.index_poster_width,
+    Settings.movies.index_poster_height]
 
   storage :file
 
