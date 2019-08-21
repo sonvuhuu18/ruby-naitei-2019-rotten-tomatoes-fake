@@ -881,3 +881,12 @@ header {
   /* font-size: 22px; */
   padding-bottom: 200px;
 }
+
+.news-header {
+  background-color: #b70000;
+  color: white !important;
+}
+
+.title-news:hover{
+  box-shadow:   1px 1px 1px #aa97d8c2;
+}
