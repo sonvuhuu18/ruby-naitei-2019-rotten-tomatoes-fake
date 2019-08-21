@@ -9,7 +9,12 @@ Rails.application.routes.draw do
       resources :episodes, only: :show
     end
   end
+  resources :users
   resources :celebrities, only: %i(index show)
+  resources :news
+  resources :reviews, only: %i(create destroy)
+  resources :search, only: :index
+
   namespace :admin do
     resources :movies
     resources :users, except: %i(new create edit)

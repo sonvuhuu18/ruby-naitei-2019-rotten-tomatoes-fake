@@ -1,13 +1,11 @@
-<div class="col-12">
-  <div class="card">
-    <div class="card-header">
-      <h3><%= link_to news.title, news_path(news) %></h3>
-    </div>
-    <h4 class="card-title text-right"><%= news.user_name %></h3>
-    <p class="card-text">
-      <%= sanitize news.content %>
-    </p>
-    <div class="row">
+<div class="container mt-3">
+  <h4 class="title-show-news"><%= link_to news.title, news_path(news) %></h4>
+  <div class="media border-news p-3">
+    <%= image_tag("home-video/trailer/1.jpg", class: "image-new-user") %>
+    <div class="media-body">
+      <h4><%= news.user_name %>
+        <small><i> <%= t "Posted on" %> <%= I18n.l(news.created_at.to_time, format: :long) %> </i></small></h4>
+      <p><%= sanitize news.content %></p>
       <% if current_user == news.user %>
         <div class="col-4 offset-4">
           <div class="btn-group">
@@ -19,4 +17,3 @@
     </div>
   </div>
 </div>
-<div class="movie_head"></div>

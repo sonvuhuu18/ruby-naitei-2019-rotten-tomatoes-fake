@@ -3,8 +3,8 @@ module Search
 
   class_methods do
     def cosine string1, string2
-      word1 = string1.downcase.split("")
-      word2 = string2.downcase.split("")
+      word1 = ngrams string1
+      word2 = ngrams string2
 
       set = word1 | word2
       afreq = count(word1)
@@ -48,6 +48,11 @@ module Search
             rank_max <= Settings.limit_cosine
       end
       new_data
+    end
+
+    def ngrams str
+      letters = [" "] + str.downcase.split("") + [" "]
+      letters.each_cons(2).to_a
     end
   end
 end

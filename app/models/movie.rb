@@ -6,37 +6,30 @@ class Movie < ApplicationRecord
 
   mount_uploader :poster, PosterUploader
 
+  ATTR = %i(name release_date critic_score audience_score info poster).freeze
+  validates :name, presence: true,
+            length: {maximum: Settings.movies.name_max_length}
+  validates :info, presence: true,
+            length: {maximum: Settings.movies.info_max_length}
+
   scope :create_desc, ->{order updated_at: :desc}
-  scope :create_top_score, (
-    lambda do
-      sort_by{|m| [m.score(:critic), m.score(:normal)]}.reverse
-    end)
+  scope :create_top_score, ->{sort_by{|m| [m.score(:critic), m.score(:normal)]}.reverse}
 
   scope :load_all, (
   lambda do
-    joins(:celebrities).all.select("movies.id, "\
-    "celebrities.name, movies.name as film_name,movies.release_date")
+    joins(medium: [{celebrity_media: :celebrity}]).select("movies.id, "\
+      "celebrities.name, movies.name as film_name,movies.release_date")
   end)
   scope :list_search, ->(movies_id){find(movies_id)}
 
   scope :celebrities_list, (
-    lambda do |movie_id|
-      Celebrity.where(
-        id: includes(medium:
-          [celebrity_media: :celebrity]).where(id: movie_id)
-                                        .pluck("celebrities.id")
-      )
-    end)
-
-  ATTR = %i(name release_date critic_score audience_score info poster).freeze
-  validates :name, presence: true,
-    length: {maximum: Settings.movies.name_max_length}
-  validates :info, presence: true,
-    length: {maximum: Settings.movies.info_max_length}
+  lambda do |movie_id|
+    Celebrity.where(id: includes(medium: [celebrity_media: :celebrity]).where(id: movie_id)
+                            .pluck("celebrities.id"))
+  end)
 
   def score user_role
     medium.reviews
-          .joins(:user).merge(User.role(user_role))
-          .average(:score) || Settings.not_review_yet
+        .joins(:user).merge(User.role(user_role)).average(:score) || 0
   end
 end

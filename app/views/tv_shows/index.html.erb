@@ -14,7 +14,7 @@
               <div class="card-body item-body">
                 <h4 class="card-title">
                   <span class="badge badge-warning">
-                    <%= tv_show.score(:critic) == 0 ? "N/A" : tv_show.score(:critic).round(1)%>
+                    <%= tv_show.score(:critic) == 0 ? "N/A" : tv_show.score(:critic).round(1) %>
                   </span>
                   <%= link_to tv_show.name, tv_show %>
                 </h4>
@@ -23,8 +23,7 @@
           </div>
         <% end %>
       </div>
-      <%= paginate @tv_shows, theme: "twitter-bootstrap-3",
-                   pagination_class: "pagination-sm"%>
+      <%= paginate @tv_shows, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm" %>
     </div>
     <div class="col-3 reset-padding">
       <ul class="nav nav-tabs">
