@@ -6,10 +6,10 @@
     <div class="col-3 reset-padding">
       <ul class="nav nav-tabs">
         <li class="nav-item">
-          <%= link_to t("movies.show.tab_tvshow.title"), "#menu1", data: {toggle: "pill"}, class: "nav-link active"%>
+          <%= link_to t(".tab_movie.title"), "#menu1", data: {toggle: "pill"}, class: "nav-link"%>
         </li>
         <li class="nav-item">
-          <%= link_to t("movies.show.tab_movie.title"), "#menu2", data: {toggle: "pill"}, class: "nav-link" %>
+          <%= link_to t(".tab_tvshow.title"), "#menu2", data: {toggle: "pill"}, class: "nav-link active" %>
         </li>
       </ul>
       <!-- Tab panes -->
@@ -29,18 +29,20 @@
             <h3 class="text-white">
               <%= @tv_show.name %>
             </h3>
-            <div class="text-white">
-              <%= t "movies.show..right_box.note1" %>
-            </div>
-            <div class="text-white">
-              <%= t "movies.show.right_box.note2" %>
-            </div>
+            <% if @critic_score.zero? %>
+              <div class="text-white">
+                <%= t "movies.show..right_box.note1" %>
+              </div>
+              <div class="text-white">
+                <%= t "movies.show.right_box.note2" %>
+              </div>
+            <% end %>
           </div>
           <br>
           <div class="row">
             <div class="col-6 text-right">
               <h3><span class="badge-warning badge">
-                  <%= @tv_show.created_at %></span></h3>
+                <%= @critic_score.zero? ? "N/A" : @critic_score.round(1) %></span></h3>
               <h4 class="text-muted">
                 <%= t "movies.show.right_box.tomascore" %>
               </h4>
@@ -50,7 +52,7 @@
             </div>
             <div class="col-6">
               <h3><span class="badge-warning badge">
-                  <%= @tv_show.updated_at %></span></h3>
+                <%= @audience_score.zero? ? "N/A" : @audience_score.round(1) %></span></h3>
               <h4 class="text-muted">
                 <%= t "movies.show.right_box.audiscore" %>
               </h4>
@@ -62,15 +64,23 @@
         </div>
       </div><br>
       <div class="row">
-        <div class="col-4">
-        </div>
-        <div class="col-8">
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">
-              <%= t "movies.show.right_box.comment" %></label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-            <br>
-            <div class="text-right"><button type="button" class="btn btn-warning btn-sm "><%= t"submit" %></button></div>
+        <div class="col-12">
+          <h3 class="text-center bg-danger"><span class="text-white ">
+              <%= t ".season" %></span></h3>
+          <div class="row">
+            <% @tv_show.seasons.each do |season| %>
+              <div class="col-4">
+                <div class="card seasons_line">
+                  <%= image_tag season.poster.url, class: "card-img-top" if season.poster? %>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <span class="badge badge-warning"><%= season.score(:critic).zero? ? "N/A" : season.score(:critic).round(1)  %></span>
+                      <%= link_to "Season #{season.season_number}", tv_show_season_path(@tv_show, season)%>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -105,34 +115,7 @@
         </div>
         <div class="col-12">
           <div class="row">
-            <div class="col-2">
-              <div>
-                <%= image_tag("home-video/trailer/1.jpg", class: "rounded-circle") %>
-              </div><br>
-              <h6 class="text-center"><span class="text-warning">
-                  <%= t "teamplate.name" %></span></h6>
-            </div>
-            <div class="col-2">
-              <div>
-                <%= image_tag("home-video/trailer/1.jpg", class: "rounded-circle") %>
-              </div><br>
-              <h6 class="text-center"><span class="text-warning">
-                  <%= t "teamplate.name" %></span></h6>
-            </div>
-            <div class="col-2">
-              <div>
-                <%= image_tag("home-video/trailer/1.jpg", class: "rounded-circle") %>
-              </div><br>
-              <h6 class="text-center"><span class="text-warning">
-                  <%= t "teamplate.name" %></span></h6>
-            </div>
-            <div class="col-2">
-              <div>
-                <%= image_tag("home-video/trailer/1.jpg", class: "rounded-circle") %>
-              </div><br>
-              <h6 class="text-center"><span class="text-warning">
-                  <%= t "teamplate.name" %></span></h6>
-            </div>
+            <%= render @celebrities %>
           </div>
         </div>
       </div>

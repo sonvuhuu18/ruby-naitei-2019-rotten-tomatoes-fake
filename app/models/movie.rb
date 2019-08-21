@@ -3,17 +3,14 @@ class Movie < ApplicationRecord
   after_create :create_medium
 
   has_one :medium, as: :reviewable, dependent: :destroy
-  has_many :celebrity_media, through: :medium
-  has_many :celebrities, through: :celebrity_media
+
   mount_uploader :poster, PosterUploader
 
-  scope :create_desc, ->{order name: :desc}
-  scope :create_top_new, ->{order release_date: :desc}
-  scope :create_top_score, ->{order critic_score: :desc}
-  scope :top_new_show, ->{limit Settings.movies.top}
-  scope :top_score_show, ->{limit Settings.movies.top}
-  scope :top_new_more, ->{offset Settings.movies.top}
-  scope :top_score_more, ->{offset Settings.movies.top}
+  scope :create_desc, ->{order updated_at: :desc}
+  scope :create_top_score, (
+    lambda do
+      sort_by{|m| [m.score(:critic), m.score(:normal)]}.reverse
+    end)
 
   scope :load_all, (
   lambda do
@@ -21,6 +18,16 @@ class Movie < ApplicationRecord
     "celebrities.name, movies.name as film_name,movies.release_date")
   end)
   scope :list_search, ->(movies_id){find(movies_id)}
+
+  scope :celebrities_list, (
+    lambda do |movie_id|
+      Celebrity.where(
+        id: includes(medium:
+          [celebrity_media: :celebrity]).where(id: movie_id)
+                                        .pluck("celebrities.id")
+      )
+    end)
+
   ATTR = %i(name release_date critic_score audience_score info poster).freeze
   validates :name, presence: true,
     length: {maximum: Settings.movies.name_max_length}
@@ -29,6 +36,7 @@ class Movie < ApplicationRecord
 
   def score user_role
     medium.reviews
-          .joins(:user).where(users: {role: user_role}).average(:score) || 0
+          .joins(:user).merge(User.role(user_role))
+          .average(:score) || Settings.not_review_yet
   end
 end

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get "/home", to: "static_pages#home"
   root "static_pages#home"
   resources :movies, only: %i(index show)
-  resources :tv_shows, only: %i(index show)
+  resources :tv_shows, only: %i(index show) do
+    resources :seasons, only: :show do
+      resources :episodes, only: :show
+    end
+  end
   resources :celebrities, only: %i(index show)
   namespace :admin do
     resources :movies
