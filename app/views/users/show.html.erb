@@ -40,16 +40,19 @@
                 <p><%= @user.email %></p>
               </div>
             </div>
-            <% if @user.organization %>
-              <div class="row">
-                <div class="col-md-4">
-                  <label><%= t "organization.title" %></label>
-                </div>
-                <div class="col-md-8">
-                  <p><%= @user.organization %></p>
-                </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <label><%= t "organization.title" %></label>
               </div>
-            <% end %>
+              <div class="col-md-8">
+                <% if @user.organization? %>
+                  <p><%= @user.organization %></p>
+                <% else %>
+                  <p> <%= t ".not_update_yet" %></p>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -12,6 +12,8 @@ en:
       password: "Password"
       password_confirmation: "Confirmation"
       submit: "Sign up"
+    show:
+      not_update_yet: "Not update yet !"
   shared:
     error:
       one: "The form contains 1 error."

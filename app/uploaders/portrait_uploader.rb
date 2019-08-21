@@ -1,7 +1,7 @@
 class PortraitUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [Settings.celebrities.index_portrait_heigth,
-    Settings.celebrities.index_portrait_width]
+  process resize_to_fill: [Settings.celebrities.index_portrait_width,
+    Settings.celebrities.index_portrait_height]
 
   storage :file
 
