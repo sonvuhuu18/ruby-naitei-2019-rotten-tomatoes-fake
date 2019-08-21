@@ -86,7 +86,7 @@
                         <% @user.news.each do |item| %>
                           <div class="col-md-12">
                             <h4><%= link_to item.title, item %></h4>
-                                                          <span class="badge badge-dark">
+                              <span class="badge badge-dark">
                                 <%= I18n.l(item.created_at.to_time, format: :long) %>
                               </span>
                               <br><%= sanitize item.content %>

@@ -15,22 +15,22 @@ not_review_yet: 0
 movies:
   name_max_length: 100
   info_max_length: 1000
-  index_poster_height: 200
-  index_poster_width: 400
+  index_poster_height: 400
+  index_poster_width: 270
   poster_accept: "image/jpeg,image/gif,image/png"
   top: 10
 
 tvshows:
   name_max_length: 100
   info_max_length: 1000
-  index_poster_height: 200
-  index_poster_width: 400
+  index_poster_height: 400
+  index_poster_width: 270
   poster_accept: "image/jpeg,image/gif,image/png"
 
 seasons:
   info_max_length: 1000
-  index_poster_height: 200
-  index_poster_width: 400
+  index_poster_height: 400
+  index_poster_width: 270
   poster_accept: "image/jpeg,image/gif,image/png"
 
 episodes:
@@ -38,8 +38,8 @@ episodes:
 
 celebrities:
   name_max_length: 100
-  index_portrait_heigth: 400
-  index_portrait_width: 200
+  index_portrait_height: 400
+  index_portrait_width: 270
   portrait_accept: "image/jpeg,image/gif,image/png"
 
 news:

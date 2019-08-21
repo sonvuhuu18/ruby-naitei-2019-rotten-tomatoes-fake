@@ -1,7 +1,8 @@
 class NewsController < ApplicationController
+  before_action :authenticate_user!, except: %i(index show)
   before_action :load_news, except: %i(index new create)
   before_action :check_news, only: :show
-  before_action :build_user, :build_movie_tvshow, only: :index
+  before_action :build_user, :build_movie_tvshow, only: %i( index new )
 
   def index
     @all_news = News.approved.update_desc.page(params[:page]).per Settings.news.paginate

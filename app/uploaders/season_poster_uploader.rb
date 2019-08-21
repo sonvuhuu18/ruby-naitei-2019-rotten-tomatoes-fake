@@ -1,7 +1,7 @@
 class SeasonPosterUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-  process resize_to_limit: [Settings.seasons.index_poster_heigth,
-    Settings.seasons.index_poster_width]
+  process resize_to_fill: [Settings.seasons.index_poster_width,
+    Settings.seasons.index_poster_height]
 
   storage :file
 

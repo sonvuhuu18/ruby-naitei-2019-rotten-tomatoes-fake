@@ -1,16 +1,13 @@
-<div class="row">
-  <div class="col-8 offset-2">
-    <%= form_for @news do |f| %>
-      <%= f.label t ".title" %>
-      <%= f.text_field :title, class: "form-control" %>
+<%= form_for @news do |f| %>
+  <%= f.label t ".title" %>
+  <%= f.text_field :title, class: "form-control" %>
 
-      <%= f.label t ".content" %>
-      <%= f.cktext_area :content, class: "ckeditor", rows: 30 %>
+  <%= f.label t ".content" %>
+  <%= f.cktext_area :content, class: "ckeditor", rows: 30 %>
 
-      <%= f.hidden_field :status, {value: Settings.news.status.pending}%>
+  <%= f.hidden_field :status, {value: Settings.news.status.pending} %>
 
-      <%= f.submit t ".submit", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+  <%= f.submit t ".submit", class: "btn btn-primary" %>
+<% end %>
+
 <%= javascript_include_tag Ckeditor.cdn_url %>
