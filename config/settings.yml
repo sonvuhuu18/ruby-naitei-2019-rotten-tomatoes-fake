@@ -7,6 +7,9 @@ users:
     moderator: 1
     critic: 2
     normal: 3
+  index_avatar_height: 200
+  index_avatar_width: 200
+
 paginate: 9
 tab_show: 15
 limit_cosine: 0.3

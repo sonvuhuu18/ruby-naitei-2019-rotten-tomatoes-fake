@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :requests, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+
   enum role: {admin: 0, moderator: 1, critic: 2, normal: 3}
 
   scope :role, ->(role){where role: role}
@@ -13,7 +15,7 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # ATTR = %i(name email organization role password password_confirmation).freeze
-  ATTR = %i(name email organization role).freeze
+  ATTR = %i(name email organization role avatar).freeze
 
 
   validates :name,

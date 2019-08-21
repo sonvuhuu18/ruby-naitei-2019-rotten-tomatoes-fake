@@ -14,6 +14,10 @@
 
     <%= f.label t "password.confirm" %>
     <%= f.password_field :password_confirm, autocomplete: "old-password", class: "form-control" %>
+
+    <span class="avatar">
+        <%= f.file_field :avatar %>
+    </span>
     <br><br>
     <%= f.submit t("submit"), class: "btn btn-primary" %>
   <% end %>
